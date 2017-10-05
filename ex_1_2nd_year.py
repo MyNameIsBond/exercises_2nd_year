@@ -49,4 +49,13 @@ def binary(number_list):
         n =  int(re.search(r'\d+', bin(n)[2:] ).group())
         print (n)
 
+# binary(number_list)
+
+
+def binary(number_list0):
+    for n in number_list:
+        ns = bin(n).replace("0b","")
+        print(ns)
+        if ns == ns[::-1]:
+            print("{} This is a palindrome".format(ns))
 binary(number_list)

@@ -12,7 +12,6 @@ VALUES ( DHL1,	DH Lawrence Ward,		B19);
 VALUES ( LB1,	Lord Byron Ward,		A05);
 VALUES ( RLH1,	Richard Lionheart Ward,	B99);
 
-
 -----------------------  Stuff Table -------------------------- |
 
 Create Table Stuff(
