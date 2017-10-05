@@ -1,4 +1,5 @@
 import sys
+import re
 
 
 
@@ -35,10 +36,19 @@ c. Remove all the numbers in the list whose binary representation is a palindrom
 after their removal.
 """
 def positive():
-    number_list = [1,2,3,4,5,6,7,8,9,-2,-13,0]
+    number_list = [1, 4, 7, 9]
     for n in number_list:
         if eval("n") > 0:
-            print(str(n) + "plus")
+            int(re.search(r'\d+', n).group())
         elif eval("n") == 0:
             print ("Oops!")
-positive()
+            
+number_list = [1, 4, 7, 9]
+def binary(number_list):
+    for n in number_list:
+        n =  int(re.search(r'\d+', bin(n)[2:] ).group())
+        print (n)
+
+binary(number_list)
+# string1 = "498results should get"
+# int(re.search(r'\d+', string1).group())
