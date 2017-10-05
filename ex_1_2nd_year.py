@@ -50,5 +50,3 @@ def binary(number_list):
         print (n)
 
 binary(number_list)
-# string1 = "498results should get"
-# int(re.search(r'\d+', string1).group())
