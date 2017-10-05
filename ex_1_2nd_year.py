@@ -43,7 +43,6 @@ def positive():
         elif eval("n") == 0:
             print ("Oops!")
             
-number_list = [1, 4, 7, 9]
 def binary(number_list):
     for n in number_list:
         n =  int(re.search(r'\d+', bin(n)[2:] ).group())
@@ -52,10 +51,28 @@ def binary(number_list):
 # binary(number_list)
 
 
-def binary(number_list0):
+def binary1():
+
+    number_list = [1,4,7,9]
     for n in number_list:
         ns = bin(n).replace("0b","")
-        print(ns)
         if ns == ns[::-1]:
-            print("{} This is a palindrome".format(ns))
-binary(number_list)
+            print ("We've got a palindrome here:{1}. From this Number:{0}".format(n,ns))
+            s = 0
+            number_list.remove(n)
+            for i in number_list:
+                s = s+1
+                print (i,s)
+
+            # print("{} This is a palindrome".format(ns))
+binary1()
+
+def binary_2():
+    number_list = [1, 4, 7, 9]    
+    """ takes a list an returns the Palindrome, and remove them afterwards """
+    for n in number_list:
+        # if bin(n).replace("0b","") ==  
+        print(n)
+# binary_2()
+
+

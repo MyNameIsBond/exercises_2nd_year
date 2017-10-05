@@ -12,6 +12,7 @@ VALUES ( DHL1,	DH Lawrence Ward,		B19);
 VALUES ( LB1,	Lord Byron Ward,		A05);
 VALUES ( RLH1,	Richard Lionheart Ward,	B99);
 
+
 -----------------------  Stuff Table -------------------------- |
 
 Create Table Stuff(
@@ -54,4 +55,3 @@ VALUES (2,30000.00, 60000, 	39000.00);
 VALUES (3,40000.00, 60000, 	49000.00);
 VALUES (4,50000.00, 60000, 	59000.00);
 VALUES (5,60000.00, 60000, 	99000.00);
-
