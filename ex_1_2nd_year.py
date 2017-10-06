@@ -75,4 +75,14 @@ def binary_2():
         print(n)
 # binary_2()
 
+number_list = [45, 4, 7, 9]
 
+def list_of_numbers(number_list):
+   for i in number_list:
+       i = len(str(i**2))
+       if i > 1:
+           ik   = i / 2
+           print(ik)
+       else:
+           print (i)
+list_of_numbers(number_list)
