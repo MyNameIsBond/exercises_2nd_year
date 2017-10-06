@@ -1,16 +1,15 @@
-
-
 -----------------------  Wards Table -------------------------- |
 Create Table Wards(
 ward_id 		NUMBER(5) PRIMARY KEY,
 Ward_name 		VARCHAR(15) NOT NULL,
 Ward_Manager_id NUMBER(4) NOT NULL
 );
-INSERT INTO Wards (ward_id, Ward_name, Ward_Manager_id)
-VALUES ( RH1,	Robin Hood Ward,		A01);
-VALUES ( DHL1,	DH Lawrence Ward,		B19);
-VALUES ( LB1,	Lord Byron Ward,		A05);
-VALUES ( RLH1,	Richard Lionheart Ward,	B99);
+
+INSERT INTO Wards(ward_id, Ward_name, Ward_Manager_id)
+VALUES ( RH1,Robin_Hood_Ward,B19);
+VALUES ( DHL1,DH _Lawrence_Ward,B19);
+VALUES ( LB1,Lord_Byron_Ward,A05);
+VALUES ( RLH1,Richard_Lionheart_Ward,B99);
 
 
 -----------------------  Stuff Table -------------------------- |
@@ -28,15 +27,15 @@ ALTER TABLE Stuff
 ADD CONSTRAINT 	ward_id_fk FOREIGN KEY (Ward_id)
 REFERENCES 		Wards(ward_id);
 
-INSERT INTO stuff (First_name, surname, salary,Bonus_pct)
-VALUES (Cornelius,Murray, 	60000, 	RH1);
-VALUES (Suky 	 ,Smith, 	19000, 	DHL1);
-VALUES (Elvis 	 ,Malone,  	25000, 	LB1);
-VALUES (Peter 	 ,Oville,  	30000, 	LB1);
-VALUES (John 	 ,Garfield, 25000, 	LB1);
-VALUES (Mike 	 ,Best,  	26500, 	LB1);
-VALUES (Shila 	 ,Jones,  	50000, 	LB1);
-VALUES (Paul 	 ,Hamzepur, 20000, 	LB1);
+INSERT INTO Stuff (First_name, surname, salary,Bonus_pct)
+VALUES(Cornelius,Murray, 	60000, 	RH1);
+VALUES(Suky 	 ,Smith, 	19000, 	DHL1);
+VALUES(Elvis 	 ,Malone,  	25000, 	LB1);
+VALUES(Peter 	 ,Oville,  	30000, 	LB1);
+VALUES(John 	 ,Garfield, 25000, 	LB1);
+VALUES(Mike 	 ,Best,  	26500, 	LB1);
+VALUES(Shila 	 ,Jones,  	50000, 	LB1);
+VALUES(Paul 	 ,Hamzepur, 20000, 	LB1);
 
 
 
@@ -55,3 +54,74 @@ VALUES (2,30000.00, 60000, 	39000.00);
 VALUES (3,40000.00, 60000, 	49000.00);
 VALUES (4,50000.00, 60000, 	59000.00);
 VALUES (5,60000.00, 60000, 	99000.00);
+
+------------------------------- lab Tasks 2 -------------------------------
+
+-- Produce a list of staff showing for each member of staff his/her id, surname and Monthly Salary.
+-- The list should be headed Staff ID, Surname and Monthly Salary.
+
+SELECT stuff_id,surname,salary FROM stuff;
+ORDER BY stuff_id,surname,salary;
+
+
+-- Produce a list of the wards. The list should be headed: Ward NAME Ward Code
+-- Ward Manager
+
+SELECT Ward_name,Ward_Manager_id,ward_id FROM Wards;
+ORDER BY Ward_name,Ward_Manager_id,ward_id;
+
+-- Ward_name,Ward_Manager_id,ward_id
+
+SELECT MAX(salary) and MIN(salary) FROM	Stuff
+
+
+-- Produce a list of staff showing for each staff in the hospital his/her first name, 
+-- his her surname (all in capital letters) and his/her id. 
+-- The list should be headed as follows: “First Name” “Surname” “Staff ID”. 
+-- The list should be sorted by surname
+
+SELECT First_name,surname FROM stuff
+ORDER BY First_name,surname;
+Where hospital = TRUE;
+
+-- Produce a list of staff that earn annual salaries more than 23000. 
+-- The list should show for each member of staff, 
+-- the “Staff ID” and the “Annual Salary”. 
+-- The list should be sorted in descending order of salary
+
+SELECT Salary,stuff_id FROM stuff
+Where salary < 23000;
+
+-- Produce a list of staff that earn between 20000 and 70000 and work on the :DH Lawrence ward.
+
+
+
+
+SELECT * FROM stuff
+where salary BETWEEN 20000 and 70000;
+
+
+
+-- It has now been decided that the date employed by each staff should be included in the staff table. 
+-- Modify the staff table to include this attribute. 
+-- Its data type is date.
+
+ALTER TABLE stuff
+ADD Date_employed date();
+
+
+-- Produce a list of all the staff in ward LB1. 
+-- The list should include for each staff, his/her staff id, surname, first name and the annual salary. 
+-- The list should be sorted in ascending order of salary and then surname. 
+
+-- YYYY-MM-DD
+
+INSERT INTO Stuff (Date_employed)
+VALUES(2001-8-26);
+VALUES(1997-9-1);
+VALUES(1998-1-1);
+VALUES(2004-6-6);
+VALUES(2009-4-17);
+VALUES(2011-8-17);
+VALUES(2008-7-17);
+VALUES(2010-10-10);
