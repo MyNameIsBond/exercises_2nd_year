@@ -65,7 +65,7 @@ def binary1():
                 print (i,s)
 
             # print("{} This is a palindrome".format(ns))
-binary1()
+# binary1()
 
 def binary_2():
     number_list = [1, 4, 7, 9]    
@@ -75,14 +75,34 @@ def binary_2():
         print(n)
 # binary_2()
 
-number_list = [45, 4, 7, 9]
+"""
+Write a function that takes an input a list of numbers and outputs a list of all numbers in the original
+list that are Kaprekar numbers. A Kaprekar number is a non-negative integer, the representation of
+whose square can be split into two parts that add up to the original number. For example, 45 is a
+Kaprekar number, as 45**2 = 2025 𝑎𝑛𝑑 20 + 25 = 45. 9 is also a Kaprekar number, 
+as 9**2 = 81 𝑎𝑛𝑑 8 + 1 = 9
 
-def list_of_numbers(number_list):
+"""
+
+number_list = [45, 4, 7, 9]
+def kaprekar_num(number_list):
    for i in number_list:
-       i = len(str(i**2))
-       if i > 1:
-           ik   = i / 2
-           print(ik)
-       else:
-           print (i)
-list_of_numbers(number_list)
+       ik = str(i**2)
+       if len(str(ik)) > 1:
+           firstpart, secondpart = ik[:len(ik)//2], ik[len(ik)//2:] 
+           f = int(firstpart) + int(secondpart)
+           if f == i:
+               return i
+kaprekar_num(number_list)
+
+
+"""
+
+2. Given a system of N equations with N unknown variables, write a program to solve this system using a
+numeric method. Input: 2x + y + 3z = 14, x – y + z = 4, x + 3y – z = 2 Output: x = 2, y = 1, z = 3
+Hint: Store all coefficients of the variables on the left hand side in a matrix and the equations’ solution in a
+column vector. The overall system solution can be found using the formula: x = inv(A)*B, where A is the left
+hand side coefficient matrix and B is the right hand side solution vector column. Note: This method only
+works if there is one solution to the system.
+
+"""
