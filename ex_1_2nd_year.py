@@ -80,16 +80,16 @@ def binary_2():
 
 number_list = [45, 4, 7, 9]
 def kaprekar_num(number_list):
-   for i in number_list:
-       ik = str(i**2)
-       if len(str(ik)) > 1:
-           firstpart, secondpart = ik[:len(ik)//2], ik[len(ik)//2:] 
-           f = int(firstpart) + int(secondpart)
-           if f == i:
-               return i
+    for i in number_list:
+        ik = str(i**2)
+        if len(str(ik)) > 1:
+            firstpart, secondpart = ik[:len(ik)//2], ik[len(ik)//2:] 
+            f = int(firstpart) + int(secondpart)
+            if f == i:
+                return i
 kaprekar_num(number_list)
 
-# from sympy import *
+import sympy as sp
 
 def equation(s):
     s.split()
@@ -97,4 +97,3 @@ def equation(s):
         print(i)
 
 equation("2x + y + 3z = 14")
-
