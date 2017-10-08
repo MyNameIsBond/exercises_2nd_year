@@ -95,19 +95,6 @@ def equation(s):
     s.split()
     for i in s:
         print(i)
-        
-        
+
 equation("2x + y + 3z = 14")
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
