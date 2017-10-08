@@ -1,4 +1,4 @@
-import sys
+
 import re
 
 
@@ -81,7 +81,6 @@ list that are Kaprekar numbers. A Kaprekar number is a non-negative integer, the
 whose square can be split into two parts that add up to the original number. For example, 45 is a
 Kaprekar number, as 45**2 = 2025 𝑎𝑛𝑑 20 + 25 = 45. 9 is also a Kaprekar number, 
 as 9**2 = 81 𝑎𝑛𝑑 8 + 1 = 9
-
 """
 
 number_list = [45, 4, 7, 9]
@@ -106,3 +105,25 @@ hand side coefficient matrix and B is the right hand side solution vector column
 works if there is one solution to the system.
 
 """
+# from sympy import *
+
+def equation(s):
+    s.split()
+    for i in s:
+        print(i)
+        
+        
+equation("2x + y + 3z = 14")
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
