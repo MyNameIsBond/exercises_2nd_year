@@ -80,20 +80,24 @@ def binary_2():
 
 number_list = [45, 4, 7, 9]
 def kaprekar_num(number_list):
+    """ Takes numbers and return the Kaprekar ones."""
     for i in number_list:
         ik = str(i**2)
         if len(str(ik)) > 1:
-            firstpart, secondpart = ik[:len(ik)//2], ik[len(ik)//2:] 
-            f = int(firstpart) + int(secondpart)
+            firstpart, secondpart = ik[:len(ik)//2], ik[len(ik)//2:] # cutting the string in half 
+            f = int(firstpart) + int(secondpart) # adding the two parts.    
             if f == i:
                 return i
 kaprekar_num(number_list)
+from sympy.solvers import solve
+from sympy import Symbol 
+def equation():
+    x,y,z = Symbol("x y z")
+    s = (2*x+y+3*z=14,x,y,z)
+    solve(s)
+    print (k)
+    
+    
 
-import sympy as sp
+equation()
 
-def equation(s):
-    s.split()
-    for i in s:
-        print(i)
-
-equation("2x + y + 3z = 14")
