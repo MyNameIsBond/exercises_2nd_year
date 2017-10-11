@@ -125,3 +125,54 @@ VALUES(2009-4-17);
 VALUES(2011-8-17);
 VALUES(2008-7-17);
 VALUES(2010-10-10);
+
+
+
+-- ------------------------------------------- WEEK 2 -------------------------------------------
+
+
+
+
+Create Table Item(
+item_id 			NUMBER(5) PRIMARY KEY,
+item_name 			VARCHAR(15) NOT NULL,
+item_Price 			FLOAT(4) NOT NULL,
+);
+
+INSERT INTO Item(item_id, item_name, item_Price,qty)
+VALUES 		(1,Bakewell Tart,0.15,		20);
+VALUES 		(2,Danish Pastry,0.20,		13);
+VALUES 		(3,Apple Pie,	 0.15,	  	45);
+
+
+Create Table Customer(
+acc_number 			NUMBER(5) PRIMARY KEY, -- same as customer ID
+Address 			VARCHAR(25) NOT NULL,
+Customer 			VARCHAR(25) NOT NULL
+);
+
+INSERT INTO Customer(acc_number, Address, Customer)
+VALUES 		(1,	27 Bay Drive Cove,Robin_Hood_Ward,	Daisy s Café );
+VALUES 		(2,	12 Dee View	Aberdeen,Smiths	);
+VALUES 		(3,3 High Street Banchory, Sally s Snacks);
+VALUES 		(3,3 High Street Banchory, Sally s Snacks);
+
+
+
+Create Table Order(
+order_No 		NUMBER(5) 	PRIMARY KEY,
+date_ord 		Date(15) 	NOT NULL,
+item_Price 		FLOAT(4) 	NOT NULL
+);
+
+INSERT INTO Order (order_No,date_ord,item_Price)
+VALUES (1,7823, 16-7)
+VALUES (1,7823, 16-7)
+
+
+Create Table Order_ord(
+order_No 		NUMBER(5) 	PRIMARY KEY,
+date_ord 		Date(15) 	NOT NULL,
+item_Price 		FLOAT(4) 	NOT NULL
+qty 				VARCHAR(15) NOT NULL,
+);
