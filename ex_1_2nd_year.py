@@ -86,9 +86,11 @@ def equation():
 equation()
 
 
-
-
-
-
-
-
+def combines_string(string_no1,string_no2):
+    """ Combines two String and turns it into one output"""
+    counter = 0
+    s1 , s2 = string_no1.split() , string_no2.split()
+    for i in range(len(s1 , s2)):
+        counter = counter + 1
+        print(s1[counter] + s1[counter])
+combines_string("something","something9")
