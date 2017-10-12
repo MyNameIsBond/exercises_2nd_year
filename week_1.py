@@ -8,17 +8,10 @@ def combine_str(string_no1, string_no2):
             str_list.append(string_no2[i])
     return print("".join(str_list)) # makes the list(str_list) a string 
 
-#combine_str("1dfghj34","5xjlkjlkj8")
+combine_str("1dfghj34","5xjlkjlkj8")
 
 
 
-"""
-Check if a 3 digit number is an Armstrong number. 
-An Armstrong number of three digits is an integer
-such that the sum of the cubes of its digits
-is equal to the number itself. 
-For example, 371 is an
-Armstrong number since 3**3 + 7**3 + 1**3 = 371."""
 
 def armstrong_num(number):
     """ True if a given number is armstrong """
