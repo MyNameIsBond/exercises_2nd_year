@@ -53,7 +53,17 @@ def binary1():
             for i in number_list:
                 s = s+1
                 print (i,s)
+
 # binary1()
+class Name(models.Model):
+    
+
+    def __str__(self):
+        return 
+
+    def __unicode__(self):
+        return 
+
 number_list = [45, 4, 7, 9]
 def kaprekar_num(number_list):
     """ Takes numbers and return the Kaprekar ones."""
@@ -64,13 +74,16 @@ def kaprekar_num(number_list):
             f = int(firstpart) + int(secondpart) # adding the two parts.    
             if f == i:
                 return i
+            
 #kaprekar_num(number_list)
+
 """
 2x + y + 3z = 14 
 x - y + z = 4
 x + 3y - z = 2 
 Output: x = 2, y = 1, z = 3
 """
+
 def equation():
     a = np.array([[2,1,3],
                   [1,-1,1],
@@ -84,13 +97,3 @@ def equation():
         num = num + 1
         print(list_[num],i)
 equation()
-
-
-def combines_string(string_no1,string_no2):
-    """ Combines two String and turns it into one output"""
-    counter = 0
-    s1 , s2 = string_no1.split() , string_no2.split()
-    for i in range(len(s1 , s2)):
-        counter = counter + 1
-        print(s1[counter] + s1[counter])
-combines_string("something","something9")
