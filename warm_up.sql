@@ -181,8 +181,8 @@ VALUES (1,7823, 16-7)
 -- ------------------------------------------- WEEK 2 norm 2. -------------------------------------------
 -------------------------------------------------->1Nf<--------------------------------------------------
 Create Table Project(
-Project_code	VARCHAR(5) PRIMARY KEY, -- same as customer ID
-Proj_Title 		CHAR(25) NOT NULL,
+Project_code	VARCHAR(5)  PRIMARY KEY, -- same as customer ID
+Proj_Title 		CHAR(25)    NOT NULL,
 Project_Badget	VARCHAR(25) NOT NULL,
 Project_Manager VARCHAR(25) NOT NULL,
 Hourly_Rate		VARCHAR(25) NOT NULL
@@ -196,8 +196,8 @@ Departure_Name	NUMBER(5) PRIMARY KEY, -- same as customer ID
 );
 -------------------------------------------------->2Nf<--------------------------------------------------
 Create Table Project(
-Project_code	VARCHAR(5) PRIMARY KEY, -- same as customer ID
-Proj_Title 		CHAR(25) NOT NULL,
+Project_code	VARCHAR(5)  PRIMARY KEY, -- same as customer ID
+Proj_Title 		CHAR(25)    NOT NULL,
 Project_Badget	VARCHAR(25) NOT NULL,
 Project_Manager VARCHAR(25) NOT NULL,
 Hourly_Rate		VARCHAR(25) NOT NULL
@@ -223,8 +223,8 @@ Departure_Name	NUMBER(5) PRIMARY KEY, -- same as customer ID
 --
 --
 Create Table Project(
-Project_code	VARCHAR(5) PRIMARY KEY, -- same as customer ID
-Proj_Title 		CHAR(25) NOT NULL, 
+Project_code	VARCHAR(5)  PRIMARY KEY, -- same as customer ID
+Proj_Title 		CHAR(25)    NOT NULL, 
 Project_Badget	VARCHAR(25) NOT NULL,
 Project_Manager VARCHAR(25) NOT NULL,
 Hourly_Rate		VARCHAR(25) NOT NULL
@@ -233,16 +233,14 @@ Hourly_Rate		VARCHAR(25) NOT NULL
 
 
 Create Table Employee(
-Employee_No		NUMBER(5) PRIMARY KEY, -- same as customer ID
-Employee_Name	NUMBER(5) PRIMARY KEY, -- same as customer ID
+Employee_No		NUMBER(5)  PRIMARY KEY, -- same as customer ID
+Employee_Name	VARCHAR(5) NOT NULL, -- same as customer ID
 
 );
 
-
-
 Create Table Deparment(
-Departure_No	NUMBER(5) PRIMARY KEY, -- same as customer ID
-Departure_Name	NUMBER(5) PRIMARY KEY, -- same as customer ID
+Departure_No	NUMBER(5)  PRIMARY KEY, -- same as customer ID
+Departure_Name	VARCHAR(5) NOT NULL, -- same as customer ID
 );
 
 
@@ -255,3 +253,4 @@ REFERENCES 		Employee(Employee_No);
 ALTER TABLE Employee
 ADD CONSTRAINT 	Departure_No FOREIGN KEY (Departure_No)
 REFERENCES 		Deparment(Departure_No);
+

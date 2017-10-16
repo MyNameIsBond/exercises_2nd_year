@@ -55,14 +55,6 @@ def binary1():
                 print (i,s)
 
 # binary1()
-class Name(models.Model):
-    
-
-    def __str__(self):
-        return 
-
-    def __unicode__(self):
-        return 
 
 number_list = [45, 4, 7, 9]
 def kaprekar_num(number_list):
