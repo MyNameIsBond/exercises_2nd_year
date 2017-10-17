@@ -69,4 +69,7 @@ Gold          4  kg      100
 Output:Load composition value = 790      4 kg of gold and 6 kg of copper 
 """
 def kg_carry(price):
+    sdsd
+
+    setsd
     
