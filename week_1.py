@@ -68,18 +68,22 @@ Gold          4  kg      100
  
 Output:Load composition value = 790      4 kg of gold and 6 kg of copper 
 """
+
 def ks_larry():
-  material = {'gold':5,'Copper':9,'Plastic':15}
-  carried_kg = int(input('How many kg you want to be crried out.'))
+  material = {'gold':6,'Copper':3,'Plastic':15}
+  carried_kg = int(input('How many kg you want to be carried out.'))
   print('mater\t Qua\tkg')
   print ('--------------------')
   for m,q in material.items():
-    carried_kg = carried_kg - q
-    # if carried_kg >= 0:
-      # carried_kg = max(0,carried_kg)
-    q = q - carried_kg
-    print('{}\t:{}\t{}'.format(m,q,max(0,carried_kg)))
+  	carried_kg = max(0,abs(carried_kg - q))
+  	q = q - carried_kg
+  	if (q or carried_kg) >= 0:
+  		print ('Bing!')
+  	print('{}\t:{}\t{}'.format(m,q,max(0,carried_kg)))
   print ('--------------------')
+  
+  
+  
   print('value:\t\t{}'.format(carried_kg))
 ks_larry()
     
