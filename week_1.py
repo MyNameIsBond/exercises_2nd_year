@@ -68,22 +68,82 @@ Gold          4  kg      100
  
 Output:Load composition value = 790      4 kg of gold and 6 kg of copper 
 """
-def ks_larry():
-  material = {'gold':6,'Copper':3,'Plastic':15}
-  carried_kg = int(input('How many kg you want to be carried out.\n'))
-  print('mater\t Qua\tkg')
-  
+
+
+def ks_larry(carried_kg):
+  material		= {'Gold':6,'Copper':3,'Plastic':15}
+  # carried_kg	= 6
+  print('mtrl\tQua\tKg\tGiven KG:{}'.format(carried_kg))
   print ('--------------------')
   
   for m,q in material.items():
+  	
+  	nq = max(0,q - carried_kg)
+  	# if carried_kg 
+  	
   	carried_kg = max(0,abs(carried_kg - q))
-  	q = q - carried_kg
-  	if q <= 0 or carried_kg <= 0:
-  		print ('Bing!')
-  	print('{}\t:{}\t{}'.format(m,q,max(0,carried_kg)))
+  	
+  	if carried_kg == q:
+  		
+  		carried_kg, q = 0 , q
+  		
+  		print ('{}\t:{}\t{}ssss'.format(m,q,carried_kg))
+  		
+  		break
+
+  	print('{}\t:{}\t{}'.format(m,nq,carried_kg))
+  	
   print ('--------------------')
   
   
-  print('value:\t\t{}'.format(carried_kg))
-ks_larry()
+  print('value:\t\t{} \n\n'.format(carried_kg))
+
+# ks_larry()
+
+# for carried_kg in range (20):
+# 	ks_larry(carried_kg)
+	
+	
+def zero_def(num,num2):
+	if num <= 0 or num2 <=0:
+		print ('bellow\t{}\t{}'.format(num,num2))
+		
+	else:
+		print ('above \t{}\t{}'.format(num,num2))
+# zero_def(1,1)		
+
+
+
+
+def changetheloop():
+	
+	s = int(input('Give me a number \t'))
+	
+	for i in range(100):
+		
+		s = s - i
+		print(s)
+
+	print (s)
+	
+def larry_no2(carried_kg):
+	material		= {'Gold':6,'Copper':3,'Plastic':15}
+	print('mtrl\tQua\tKg\tGiven KG:{}'.format(carried_kg))
+	
+	print ('--------------------')
+	
+	for m,q in material.items():
+		if (q and carried_kg) >= 0:
+			
+			carried_kg = max(0,carried_kg - q)
+			print('{}\t:{}\t{}'.format(m,q,carried_kg))
+			
+		
+	print ('--------------------')
+	
+	print('value:\t\t{} \n\n'.format(carried_kg))	
+ 
+ 
+for carried_kg in range(10):
+	larry_no2(carried_kg)
     
