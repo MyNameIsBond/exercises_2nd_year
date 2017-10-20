@@ -254,3 +254,82 @@ ALTER TABLE Employee
 ADD CONSTRAINT 	Departure_No FOREIGN KEY (Departure_No)
 REFERENCES 		Deparment(Departure_No);
 
+
+
+--------------------------------2| week 3 Mapping!------------------------------
+
+-- mapping:
+
+-- input:name
+-- input = user_input
+-- for input in every_input:
+-- 	if input related with the person
+-- 	group_by_input()
+
+
+-- sort:
+
+-- list_of_input []
+-- for elements in group_by_input:
+-- 	count the elements
+
+-- 	if they are dublicated:
+-- 		add them in a list
+
+-- reduce:
+
+-- counted_elements = []
+-- for elements in group_by_input:
+-- 	count the elements and return a list
+-- 	while elements have been counted.
+
+
+
+-- reduce: connect the name -> tweet, username -> retweet.
+
+
+----------------------------------------- ---------------------------------------
+
+
+-------------------------------------- 4 | Week 3---------------------------------
+-- My solution is to take 10 ads in two months and make a chain of products
+-- which actually, the previous ad is going to be related with the last one. 
+-- and so on.
+
+
+--------------------------------------   ----------------------------------------
+SPLITING 	MAPPING  SHUFFLING 		REDUCING 		FINAL RESULT
+---------------------------------------------------------------------------------	
+R G G G -> 	R,1  => G, (1,1,1) 		-> G,3
+			G,1
+			G,1
+			G,1
+
+R B O P ->	R,1  => R, (1,1,1,1) 	-> R,4		->		G,3  
+			B,1										 	R,4
+			O,1										 	B,3 
+			P,1											O,3
+												->		P,3
+P B O R ->	P,1	 => B (1,1,1) 		-> B,3		
+			B,1
+			O,1
+			R,1
+
+B P R O ->	B,1	 => O (1,1,1)		-> O,3
+			P,1
+			R,1
+			O,1	 => P (1,1,1)		-> P,3
+
+
+
+-------------------------------------- 1| Week 3 Task 2b  ------------------------------------
+
+
+My solution on this is to create an algorithm 
+to count the mutual friends and now many post theyve shared.
+
+
+
+-------------------------------------- 2| Week 3 Task 2b  ------------------------------------
+
+
