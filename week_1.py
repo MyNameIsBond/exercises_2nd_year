@@ -68,82 +68,30 @@ Gold          4  kg      100
  
 Output:Load composition value = 790      4 kg of gold and 6 kg of copper 
 """
-
-
-def ks_larry(carried_kg):
-  material		= {'Gold':6,'Copper':3,'Plastic':15}
-  # carried_kg	= 6
-  print('mtrl\tQua\tKg\tGiven KG:{}'.format(carried_kg))
-  print ('--------------------')
-  
-  for m,q in material.items():
-  	
-  	nq = max(0,q - carried_kg)
-  	# if carried_kg 
-  	
-  	carried_kg = max(0,abs(carried_kg - q))
-  	
-  	if carried_kg == q:
-  		
-  		carried_kg, q = 0 , q
-  		
-  		print ('{}\t:{}\t{}ssss'.format(m,q,carried_kg))
-  		
-  		break
-
-  	print('{}\t:{}\t{}'.format(m,nq,carried_kg))
-  	
-  print ('--------------------')
-  
-  
-  print('value:\t\t{} \n\n'.format(carried_kg))
-
-# ks_larry()
-
-# for carried_kg in range (20):
-# 	ks_larry(carried_kg)
-	
-	
-def zero_def(num,num2):
-	if num <= 0 or num2 <=0:
-		print ('bellow\t{}\t{}'.format(num,num2))
-		
-	else:
-		print ('above \t{}\t{}'.format(num,num2))
-# zero_def(1,1)		
-
-
-
-
-def changetheloop():
-	
-	s = int(input('Give me a number \t'))
-	
-	for i in range(100):
-		
-		s = s - i
-		print(s)
-
-	print (s)
-	
-def larry_no2(carried_kg):
-	material		= {'Gold':6,'Copper':3,'Plastic':15}
-	print('mtrl\tQua\tKg\tGiven KG:{}'.format(carried_kg))
-	
-	print ('--------------------')
+# comment out you code! 
+def larry(carried_kg):
+	'''  '''
+	material	= {'Gold':6,'Copper':3,'Plastic':15}
+	used_mat  = {}
+	cost_l		= (10,5,2)
+	print('mater\tOwn\tQua\tKg\tGiven Kg:{}'.format(carried_kg))
+	print ('----------------Calculation-----------------')
+	price,counter = 0,0
 	
 	for m,q in material.items():
-		if (q and carried_kg) >= 0:
-			
-			carried_kg = max(0,carried_kg - q)
-			print('{}\t:{}\t{}'.format(m,q,carried_kg))
-			
-		
-	print ('--------------------')
+		carried_kg,nq = max(0,carried_kg - q),max(0,q-carried_kg)
+
+		if q > nq:
+			price = ((q-nq) * cost_l[counter]) + price
+		counter = counter + 1
+		print('{}\t{}\t:{}\t{}'.format(m,q,nq,carried_kg))
+		material[m] = (q - nq)
+		used_mat.update({m : q-nq})
+		if carried_kg == 0:
+			break
+	print ('--------------------------------------------\n')
+	print ('----------------Have Been Used--------------')
+	for k,t in used_mat.items(): 
+		print ('{}\t\t:{}'.format(k,t))
 	
-	print('value:\t\t{} \n\n'.format(carried_kg))	
- 
- 
-for carried_kg in range(10):
-	larry_no2(carried_kg)
-    
+	print('Kg Left:{}\tPrice:{}\n\n'.format(carried_kg,price))
