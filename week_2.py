@@ -5,14 +5,13 @@ l2 = [2,1,2,1]
 def polynomial(l1,l2):
 	solve = []
 	counter = -1
-	for i in l1:
-		solve.append(i)
+	for i,r in zip(l1,l2):
+		solve.append(i + r)
+	print (solve)
+		
+
+
 polynomial(l1,l2)
-
-
-
-
-
 
 
 class Polynomial:
@@ -25,5 +24,3 @@ class Polynomial:
 	def __str__(self):
 		for i in self.solve:
 			return i
-	
-	
