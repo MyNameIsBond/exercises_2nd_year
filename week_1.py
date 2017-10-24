@@ -70,7 +70,8 @@ Output:Load composition value = 790      4 kg of gold and 6 kg of copper
 """
 # comment out you code! 
 def larry(carried_kg):
-	'''  '''
+	''' Takes KG and Print out according to storage how 
+    much is being used and will be carried out from Larry  '''
 	material	= {'Gold':6,'Copper':3,'Plastic':15}
 	used_mat  = {}
 	cost_l		= (10,5,2)
@@ -87,11 +88,12 @@ def larry(carried_kg):
 		print('{}\t{}\t:{}\t{}'.format(m,q,nq,carried_kg))
 		material[m] = (q - nq)
 		used_mat.update({m : q-nq})
+
 		if carried_kg == 0:
 			break
 	print ('--------------------------------------------\n')
 	print ('----------------Have Been Used--------------')
+
 	for k,t in used_mat.items(): 
 		print ('{}\t\t:{}'.format(k,t))
-	
 	print('Kg Left:{}\tPrice:{}\n\n'.format(carried_kg,price))
