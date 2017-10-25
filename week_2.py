@@ -67,7 +67,7 @@ class Polynomial():
 	
 	def __add__(self,l1,l2):
 
-		'''Adds two polynomials which are in a list form. '''
+		'''	Adds two polynomials which are in a list form. '''
 		self.l1 = list(reversed(self.l1))
 		self.l2 = list(reversed(self.l2))
 

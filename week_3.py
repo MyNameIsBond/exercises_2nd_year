@@ -1,10 +1,27 @@
 # -------------------------ex1 ---------------------------------- # 
-x = input ('Give a string to be mirrored\t')
 
-def prints_backwards(x):
+
+
+
+
+def prints_backwards(number,string):
 	''' Prints a string seperated by spaces.'''
-	x = x.split(' ')
+	if number <= 0:
+		return None
+	else:
+		if type(string) == str:
+			string = string.split(' ')
+			print (number)
+			for i in range(len(string)):
+				s = string[i]
+				s = s[::-1]
+				print (s)
+		# string = reversed(string)
+		print ('\t:{}'.format(string[number]))
+		prints_backwards(number-1,string)
 
-	for i in x:
-		print (i[::-1]) # printing backwards the string.
-prints_backwards(x)
+
+
+string = input ('Give a string to be mirrored\t')
+
+prints_backwards(4,string)
