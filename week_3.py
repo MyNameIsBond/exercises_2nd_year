@@ -10,21 +10,20 @@
 def prints_backwards(number,string):
 	''' Prints a string seperated by spaces.'''
 	
-	if number <= 0: # this is the way out. 
+	if number <= -1: # this is the way out. 
 		return None
 
 	else:
 		if type(string) == str:
 			string = string.split(' ')
-			if number >= len(string):
-				number = len(string) # make sure the function will run. 
-
+			if number < len(string):
+				number = len(string) - 1 # make sure the function will run.
+				print (number)
 		print ('\t:{}'.format(string[number][::-1]))
 		return prints_backwards(number-1,string)
 
-# string = input ('Give a string to be mirrored\t')
-# number = int (input('How many times you want the recursion to run? :)\t'))
-# prints_backwards(number,string)
+string = input ('Give a string to be mirrored\t')
+prints_backwards(1,string)
 
 
 
@@ -49,10 +48,9 @@ def linear_recursive(l):
 
 # linear_recursive(l)
 
-
 def linear_recursive_2nd(l,target,leng):
 	''' you create a list and find a given number in the list '''
-	if leng <= 10:
+	if leng <= 5:
 		try:
 			given_number = int(input('Give me 10 numbers for my list '))
 			print('countdown,{}'.format(leng))
@@ -68,6 +66,7 @@ def linear_recursive_2nd(l,target,leng):
 
 try:
 	target = int(input('For what number are you looking for?\t'))
+	l = []
 	linear_recursive_2nd(l,target,0)
 except (NameError,ValueError):
 	print ('a number please.')
