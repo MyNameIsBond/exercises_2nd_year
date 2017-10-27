@@ -22,8 +22,8 @@ def prints_backwards(number,string):
 		print ('\t:{}'.format(string[number][::-1])) # print the list according to the 'number' 
 		return prints_backwards(number-1,string)
 
-string = input ('Give a string to be mirrored\t')
-prints_backwards(1,string)
+# string = input ('Give a string to be mirrored\t')
+# prints_backwards(1,string)
 
 
 
@@ -96,7 +96,7 @@ def tower_of_cubes():
 		colour 		= str(input('Give me a colour of the cube'))
 		cube_length = int(input('Give me a the length of the cube'))
 		cubes.update({colour:cube_length})
-	print (cubes)
+	for colour,cube_length in cubes.items():
+		print ('cube{}, colour\t:{}\tlength\t:{}'.format(1,colour,cube_length))
 
 tower_of_cubes()
-		
