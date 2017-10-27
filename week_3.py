@@ -8,7 +8,7 @@
 
 
 def prints_backwards(number,string):
-	''' Prints a string seperated by spaces.'''
+	''' Prints a string backwards seperated by spaces.'''
 	
 	if number <= -1: # this is the way out. 
 		return None
@@ -28,12 +28,13 @@ prints_backwards(1,string)
 
 
 
-'''# Write a recursive version of linear search on an array of integers. What is the time complexity of the
-# algorithm? Use the BigO notation to express it.
-# Example input: L = [3,5,7,1,2,9] Target = 5
-# Example output: Found (or Yes or True etc)
-# Example input: L = [3,5,7,1,2,9] Target = 10
-# Example output: Not found (or No or False etc)
+'''
+Write a recursive version of linear search on an array of integers. What is the time complexity of the
+algorithm? Use the BigO notation to express it.
+Example input: L = [3,5,7,1,2,9] Target = 5
+Example output: Found (or Yes or True etc)
+Example input: L = [3,5,7,1,2,9] Target = 10
+Example output: Not found (or No or False etc)
 '''
 # -------------------------  ex2  ------------------------------- # 
 l =  [3,5,7,1,2,9]
@@ -64,11 +65,38 @@ def linear_recursive_2nd(l,target,leng):
 		else:
 			print ('\t:{} Has not been found'.format(target))			
 
-try:
-	target = int(input('For what number are you looking for?\t'))
-	l = []
-	linear_recursive_2nd(l,target,0)
-except (NameError,ValueError): # make sure the input is a number (int) 
-	print ('a number please.')
+# try:
+# 	target = int(input('For what number are you looking for?\t'))
+# 	l = []
+# 	linear_recursive_2nd(l,target,0)
+# except (NameError,ValueError): # make sure the input is a number (int) 
+# 	print ('a number please.')
 
+		
+
+#------------------------ Advanced ----------------------------#
+'''
+
+Consider having n cubes, each being characterized by their edge length and their colour. Use the cubes
+to build a tower of maximum height, under the following conditions:
+a) Any two neighbouring cubes must be of different colours.
+b) The edge length of a cube is lower than the edge length of the cube placed below it.
+Example input: n = 3
+ cube1: colour red, edge length 5
+ cube2: colour red, edge length 6
+ cube3: colour blue, edge length 5
+Example output: 16 (maximum tower height – corresponding to cube2, cube3 and cube1 in this order)
+
+'''
+def tower_of_cubes():
+	''' Creates a tower of cubes '''
+	n = int(input('how big your tower should be?'))
+	cubes = {}
+	for i in range(n):
+		colour 		= str(input('Give me a colour of the cube'))
+		cube_length = int(input('Give me a the length of the cube'))
+		cubes.update({colour:cube_length})
+	print (cubes)
+
+tower_of_cubes()
 		

@@ -73,8 +73,8 @@ def larry(carried_kg):
 	''' Takes KG and Print out according to storage how 
     much is being used and will be carried out from Larry  '''
 	material	= {'Gold':6,'Copper':3,'Plastic':15}
-	used_mat  = {}
 	cost_l		= (10,5,2)
+	used_mat    = {}
 	print('mater\tOwn\tQua\tKg\tGiven Kg:{}'.format(carried_kg))
 	print ('----------------Calculation-----------------')
 	price,counter = 0,0
