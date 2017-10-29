@@ -111,6 +111,7 @@ def tower_of_cubes():
 		print (cube_name)
 		print (cube_length)
 		print (cubes[cube_name])
+		# this is not a bad at all.
 
 
 tower_of_cubes() 
