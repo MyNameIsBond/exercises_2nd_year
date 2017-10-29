@@ -1,7 +1,7 @@
 #--------->	this is week 3 on recursion. Enjoy!	<---------#
 # -------------------------  ex1  ------------------------------- # 
 
-#---------------------------- if you want to run it uncomment the inputs lines 25 - 26 - 27 -------------------------------#
+# ---------------------------- if you want to run it uncomment the inputs lines 25 - 26 - 27 -------------------------------#
 
 
 
@@ -53,7 +53,7 @@ def linear_recursive_2nd(l,target,leng):
 	''' you create a list and find a given number in the list '''
 	if leng <= 5: # 5 is how many numbers the user is asked to type in. 
 		try:
-			given_number = int(input('Give me 10 numbers for my list '))
+			given_number = int(input('Give me 5 numbers for my list '))
 			print('countdown,{}'.format(leng))
 			l.append(given_number)
 			return linear_recursive_2nd(l,target,leng+1) # -1from leng so we can get out of the recursion
@@ -64,6 +64,8 @@ def linear_recursive_2nd(l,target,leng):
 			print ('\t:{} Has been found'.format(target))
 		else:
 			print ('\t:{} Has not been found'.format(target))			
+
+
 
 # try:
 # 	target = int(input('For what number are you looking for?\t'))
@@ -76,7 +78,6 @@ def linear_recursive_2nd(l,target,leng):
 
 #------------------------ Advanced ----------------------------#
 '''
-
 Consider having n cubes, each being characterized by their edge length and their colour. Use the cubes
 to build a tower of maximum height, under the following conditions:
 a) Any two neighbouring cubes must be of different colours.
@@ -88,15 +89,28 @@ Example input: n = 3
 Example output: 16 (maximum tower height – corresponding to cube2, cube3 and cube1 in this order)
 
 '''
+
 def tower_of_cubes():
 	''' Creates a tower of cubes '''
-	n = int(input('how big your tower should be?'))
-	cubes = {}
-	for i in range(n):
-		colour 		= str(input('Give me a colour of the cube'))
-		cube_length = int(input('Give me a the length of the cube'))
-		cubes.update({colour:cube_length})
-	for colour,cube_length in cubes.items():
-		print ('cube{}, colour\t:{}\tlength\t:{}'.format(1,colour,cube_length))
 
-tower_of_cubes()
+
+	# try:
+		# n = int(input('how big your tower should be?\t'))
+
+	# except ValueError:
+	# 	print ('should be a number')
+
+	cubes 		 = {'cube1':{'red':2},'cube2':{'green':4},'cube3':{'white':3},'cube4':{'red':2}}
+	# for i in range(n):
+	# 	colour 		= str(input('Give me a colour of the cube\t:'))
+	# 	cube_length = int(input('Give me a the length of the {} cube\t:'.format(colour)))
+	# 	cubes.update({colour:cube_length})
+
+	for cube_name,cube_length in cubes.items():
+
+		print (cube_name)
+		print (cube_length)
+		print (cubes[cube_name])
+
+
+tower_of_cubes() 
