@@ -134,13 +134,13 @@ def something_new ():
 			   	{'length':
 				   		{7:'red'}}}
 	n = OrderedDict(sorted(dic.items(),key=lambda x: x[1]['length']))
-	# print (n)
+	print (n)
 	for name,colour in dic.items():
 		print (name,colour)
 		for clr,leng in colour.items():
 			print (clr,leng)
 	print (dic)
 
-
+# this is a start
 something_new()
 	
