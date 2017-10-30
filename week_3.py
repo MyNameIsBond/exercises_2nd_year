@@ -93,22 +93,29 @@ Example output: 16 (maximum tower height – corresponding to cube2, cube3 and c
 def tower_of_cubes():
 	''' Creates a tower of cubes '''
 
-	cubes 	= {} # dict to store [name : [ colour : cube's length] ] 
-	colours = ['red','pink','white','green','silver','black','orange']
+	cubes 		= {} # dict to store [name : [ colour : cube's length] ] 
+	colours 	= ['red','pink','white','green','silver','black','orange']
 	sum_length 	= 0
-	try:
+	final_list 	= []
+	try:	
 		n = int(input('how big your tower should be?\t'))
 	except ValueError:
 		print ('should be a number')
 		
+
 	for i in range(n):
-		colour = int(input('Pick one from 1 to 7\t{}'.format(colours)))
+		colour 		= int(input('Pick one colour from 1 to 7\t{}'.format(colours)))
 		cube_length = int(input('Type a the length of the {} cube\t:'.format(colours[colour - 1])))
 		cubes.update({'cube'+ str((i+1)):{colours[colour - 1]:cube_length}})
-	for name,colour in cubes.items():
-		for name_of_colour,cube_length in colour.items():
+
+
+	for name,colour in sorted(cubes.items()):
+		print (name,colour)
+		for name_of_colour,cube_length in sorted(colour.items()):
 			sum_length += cube_length
 			print ('{}\t{}'.format(name_of_colour,cube_length))
+
 	print (cubes,sum_length)
+
 
 tower_of_cubes()
