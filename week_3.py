@@ -89,7 +89,7 @@ Example input: n = 3
 Example output: 16 (maximum tower height – corresponding to cube2, cube3 and cube1 in this order)
 
 '''
-
+from collections import OrderedDict
 def tower_of_cubes():
 	''' Creates a tower of cubes '''
 
@@ -104,14 +104,15 @@ def tower_of_cubes():
 		
 
 	for i in range(n):
+
 		colour 		= int(input('Pick one colour from 1 to 7\t{}'.format(colours)))
 		cube_length = int(input('Type a the length of the {} cube\t:'.format(colours[colour - 1])))
-		cubes.update({'cube'+ str((i+1)):{colours[colour - 1]:cube_length}})
+		cubes.update({'cube'+ str((i+1)):{cube_length:colours[colour - 1]}})
 
 
-	for name,colour in sorted(cubes.items()):
-		print (name,colour)
-		for name_of_colour,cube_length in sorted(colour.items()):
+	for name,cube_length in cubes.items():
+		print (type(cube_length))
+		for cube_length,name_of_colour in OrderedDict(sorted(cube_length.items(),key=lambda x: )):
 			sum_length += cube_length
 			print ('{}\t{}'.format(name_of_colour,cube_length))
 
@@ -119,3 +120,16 @@ def tower_of_cubes():
 
 
 tower_of_cubes()
+
+
+def something_new ():
+
+	dic = 	{'cube2': {'colour': 'pink'}, 
+     		'cube3': {'colour': 'black'}, 
+       		'cube1': {'colour': 'pink'}}
+
+	n = OrderedDict(sorted(dic.items(),key=lambda x: x[1]['colour']))
+	print (n)
+
+something_new()
+	
