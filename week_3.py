@@ -129,8 +129,6 @@ def tower_of_cubes():
 					final_list[counter-1] , final_list[counter-2] = final_list[counter-2], final_list[counter-1] # swapping. 
 			except Traceback:
 				print ('oops!')
-				
-
 
 		counter +=1 
 	for i in reversed(final_list):
