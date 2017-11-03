@@ -333,3 +333,59 @@ to count the mutual friends and now many post theyve shared.
 -------------------------------------- 2| Week 3 Task 2b  ------------------------------------
 
 
+
+
+
+
+
+
+
+a) information about US cities as well as location of the city which includes lat and log. 
+-- b) vary of things, for examplbe we can count the cities, or sum up the population.
+
+
+
+
+-- { "_id" : "01036", "city" : "HAMPDEN", "loc" : [ -72.43182299999999, 42.064756 ], "pop" : 4709,
+-- "state" : "MA" }
+
+
+
+-- a) SELECT MA FROM CITIES
+-- b) SELECT Fisher Island FROM CITIES
+
+
+-- c. db.zipcodes.aggregate( [
+-- { $group: { _id: "$state", totalPop: { $sum: "$pop" } } },
+-- { $match: { totalPop: { $gte: 10*1000*1000 } } }] )
+-- SELECT state, SUM(pop) AS totalPop
+-- FROM Cities
+-- GROUP BY state
+-- HAVING totalPop >= (10*1000*1000)
+
+
+-- D. db.zipcodes.aggregate({$group: {_id: "$state", avg:{$avg:"$pop"}}}
+
+
+-- SELECT state, AVG (pop)
+-- FROM [Cities]
+
+
+-- E. group({
+-- key : {state:1},
+-- initial : {pop:-1,city:"none"},
+-- reduce : function Reduce(doc, out) {
+-- if(doc.pop < out.pop || out.pop==-1)
+-- {
+-- out.pop=doc.pop;
+-- out.city=doc.city;
+-- }
+-- }})
+
+-- SELECT COUNT (key,)
+
+
+
+
+
+
