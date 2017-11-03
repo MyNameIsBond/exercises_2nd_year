@@ -49,6 +49,7 @@ class All_sorts:
                 if self.num_list[i-1] > self.num_list[i]:
                     self.num_list[i-1] , self.num_list[i] = self.num_list[i] , self.num_list[i-1]
             m -= 1
+            
         return self.num_list
 
     def selection_sort(self,num_list):
