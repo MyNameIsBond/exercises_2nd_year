@@ -15,10 +15,18 @@ In a unsorted list fist it checks the 1st element and if the next element in the
 according to my comparisons_counter, this algorithm is going to compare 18 times.
 the worst performance is if the list is large. The best perfomance would be with a small list.
 this could be explained: Best case:O(n) worst case: O(n^2) or ( O(n**2) )   
-
+so the swapping would be like this
+step 1:[2 7 9 4 1 5 3 6 0 8]
+step 2:[2 7 9 4 1 5 3 6 0 8]
+step 3:[2 7 9 4 1 5 3 6 0 8]
+step 4:[2 7 9 4 1 5 3 6 0 8]
+step 5:[2 7 9 4 1 5 3 6 0 8]
+step 6:[2 7 9 4 1 5 3 6 0 8]
+step 7:[2 7 9 4 1 5 3 6 0 8]
+step 8:[2 7 9 4 1 5 3 6 0 8]
 2)
 Bellow you will find the code for the Bubble Sort. 
-This algorithm could be described as  
+This algorithm could be described as 
 '''
 class All_sorts:
     ''' every function is another sort type (algorithm). '''
@@ -45,7 +53,7 @@ class All_sorts:
         m = len(num_list)
         while m > 0:
 
-            for i in range(1,m):
+            for i in range(1,m): # starts from one in order to avoid errors. 
                 if self.num_list[i-1] > self.num_list[i]:
                     self.num_list[i-1] , self.num_list[i] = self.num_list[i] , self.num_list[i-1]
             m -= 1
