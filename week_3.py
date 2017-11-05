@@ -37,17 +37,22 @@ Example input: L = [3,5,7,1,2,9] Target = 10
 Example output: Not found (or No or False etc)
 '''
 # -------------------------  ex2  ------------------------------- # 
-l =  [3,5,7,1,2,9]
-def linear_recursive(l):
-	target = int(input('give me a target\t'))
-	if target in l:
-		print ('{},Found!'.format(target))
+def linear_recursive(l,counter,number):
+	if number == l[counter]:
+		print ('{}, has been Found '.format(number))
+	elif counter == -1:
+		print ('Not Found')	
 	else:
-		print ('{},Not Found!'.format(target))
+		linear_recursive(l,counter-1,number)
+	
+try:
+	l =  [3,5,7,1,2,9]
+	counter = len(l) - 1 
+	number = int(input('Give me the number you want to find.\t'))
+	linear_recursive(l,counter,number)
+except TypeError:
+	print('Give me a number please.')
 
-
-
-# linear_recursive(l)
 
 def linear_recursive_2nd(l,target,leng):
 	''' you create a list and find a given number in the list '''
@@ -134,4 +139,4 @@ def tower_of_cubes():
 	for i in reversed(final_list):
 		print (i)
 
-tower_of_cubes()
+# tower_of_cubes()

@@ -76,7 +76,7 @@ class All_sorts:
         ''' prints the list '''
         return str(self.num_list)
 
-l = [2 7 9 4 1 5 3 6 0 8]
+l = [2,7,9,4,1,5,3,6,0,8]
 
 a = All_sorts(l)
 # a.insertion(l)
