@@ -1,5 +1,5 @@
 #--------->	this is week 3 on recursion. Enjoy!	<---------#
-# -------------------------  ex1  ------------------------------- # 
+# --------------------------------------------  ex1  -------------------------------------------- # 
 
 # ---------------------------- if you want to run it uncomment the inputs lines 25 - 26 - 27 -------------------------------#
 
@@ -39,19 +39,19 @@ Example output: Not found (or No or False etc)
 # -------------------------  ex2  ------------------------------- # 
 def linear_recursive(l,counter,number):
 	if number == l[counter]:
-		print ('{}, has been Found '.format(number))
+		print ('{}, has been Found'.format(number))
 	elif counter == -1:
 		print ('Not Found')	
 	else:
 		linear_recursive(l,counter-1,number)
 	
-try:
-	l =  [3,5,7,1,2,9]
-	counter = len(l) - 1 
-	number = int(input('Give me the number you want to find.\t'))
-	linear_recursive(l,counter,number)
-except TypeError:
-	print('Give me a number please.')
+# try:
+# 	l =  [3,5,7,1,2,9]
+# 	counter = len(l) - 1 
+# 	number = int(input('Give me the number you want to find.\t'))
+# 	linear_recursive(l,counter,number)
+# except TypeError:
+# 	print('Give me a number please.')
 
 
 def linear_recursive_2nd(l,target,leng):
