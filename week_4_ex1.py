@@ -30,6 +30,7 @@ to run selection sort. selection_sort() in class All_sorts should be run.
 this could be explained: Best case:O(n) which means O(1) one swapp. worst case: O(n^2) or ( O(n**2) ) 
 this algorith is the slowest in this list. because compares only two numbers at a time.
 '''
+import random
 class All_sorts:
     ''' every function is another sort type (algorithm). '''
 
@@ -96,7 +97,7 @@ class All_sorts:
                     self.num_list[k],self.num_list[s] = self.num_list[s] , self.num_list[k] 
                     print ('{}) {} and {} were swapped. while the list is {}'.format(swapping_counter,self.num_list[k],self.num_list[s],num_list))
 
-        print ('|{}| This is how many times this alth run'.format(counter))
+        print ('| {} | This is how many times this alth runs'.format(counter))
         return self.num_list
 
     def __str__(self):
@@ -104,13 +105,15 @@ class All_sorts:
         return str(self.num_list)
 
 
-# To Check every sorting,uncomment instances one at a time. (lines: 91,92,93,94)
+# To Check every sorting,uncomment instances one at a time. 
+# Note: Make sure you have only one uncommented sorting alg due to the list will be sorted from another alg.  
 if __name__ == '__main__':
     try: # to make sure is going to be a list.
         l = [2,7,9,4,1,5,3,6,8,0]
+        # l = [random.randint(1,30) for x in range(40)] #uncomment if you want to test with different numbers.
         a = All_sorts(l)
-        a.insertion(l)
-        # a.bubble_sort(l)
+        a.bubble_sort(l)
+        # a.insertion(l)
         # a.selection_sort(l)
         # print (a)
     except TypeError:
