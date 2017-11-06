@@ -40,7 +40,7 @@ Example output: Not found (or No or False etc)
 def linear_recursive(l,counter,number):
 	if number == l[counter]:
 		print ('{}, has been Found'.format(number))
-	elif counter == -1:
+	elif counter == -1: 
 		print ('Not Found')	
 	else:
 		linear_recursive(l,counter-1,number)
@@ -53,6 +53,7 @@ def linear_recursive(l,counter,number):
 # except TypeError:
 # 	print('Give me a number please.')
 
+# This is the same with the previous. This time you create the list.
 
 def linear_recursive_2nd(l,target,leng):
 	''' you create a list and find a given number in the list '''
