@@ -384,7 +384,52 @@ a) information about US cities as well as location of the city which includes la
 
 -- SELECT COUNT (key,)
 
+---------------------------------------------------- Week 6. ----------------------------------------
 
+What type of queries will need to be done?
+-- 1) we have to divide the pages.
+-- we need a log in / registation / profile page. (user pages.)
+
+-- 1.1) which is the product storage. price,quantity. suggestions on what other people usually bought.
+-- when they purchased the same item which is loaded.
+
+
+-- 2) we need pages to show the productes weither seperated by categories or brands. (or maybe both.)
+
+-- 3) we need to decide on if we want to use baskets. lattest research have show that 90% of the baskets
+-- they end up for ever filled and people won't carry on their 'shopping'
+
+-- 4)   
+
+
+
+-- since we need the results quick. The best option should be MongoDB
+
+
+
+-- What type of queries will need to be done?
+
+-- - How fast do you need the results back? 
+-- pretty fast, cause nowdays if the algorithms are slow the costumer is not going to come back.
+
+
+-- - How will you link the customer to the products bought?
+-- eatch costomer will have a list which indicates to the products bought.
+
+
+-- - Which fields should you use for comparison for recommendations?
+-- probably eatch items would have a certain category.
+-- further more you can store details for eatch items like inches or resolution for screens or laptops etc.
+
+-- - What objects would be required? What documents?
+-- in eatch item would have their own details.
+-- the documents would be seperated by category.
+
+-- - Are the documents atomic or are there embedded documents?
+
+-- since we need to 
+
+-- - Is this all a separate collection or do you want your whole database available for real time querying?
 
 
 
