@@ -1,7 +1,8 @@
 '''
+
 1. Consider a n x m matrix, with elements decimal digits
 (natural numbers between 1 and 9), representing
-colours. Done!
+colours.
 
 A connected set associated to an element is the set of elements that
 may be reached from this
@@ -20,6 +21,7 @@ Output: The size of the biggest set is 5 and the colour is whichever colour you
 represented by 8.
 
 '''
+from collections import Counter
 import random as rnd
 
 class Matrix:
@@ -39,34 +41,36 @@ class Matrix:
     def check_set(self):
         lst = self.mat
 
-        for row in range(len(lst)):
+        for row in range(1,len(lst)):
+            print (row)
             for i in range(len(lst[row])-1):
-                if lst[row].count(lst[row][i]) >= 2 and lst[row][i] == lst[row][i+1]:
 
-                    print('this: {}'.format(lst[row][i]))
+                if lst[row].count(lst[row][i]) >= 2 and lst[row][i] == lst[row][i-1]:
+                    self.c.update({self.colour[lst[row][i]]})
+                    # print('this: {}'.format(lst[row][i]))
 
-                # elif self.mat[row].count(self.mat[row][i]) >= 2:
-                    # print ()
+                if lst[row][i] == lst[row-1][i] or lst[row][i] == lst[row][i-1]:
+                    # print ('hey{}'.format(i))
+                    self.c.update({self.colour[lst[row][i]]})
+        print (self.c)
 
 
-    def print_colour(self,m):
-        colour = ['red','yellow','green','pink','grey','orange','blue','violet','aqua','black','white']
-        if self.m <= 0:
-            return None
-        else:
-            m = m - 1
-            return colour[m]
+    def print_colour(self):
+        self.c = Counter({})
+        self.colour = ['red','yellow','green','pink','grey','orange','blue','violet','aqua','black','white']
 
 
 if __name__ == '__main__':
 
-    try:
-        n = int(input('type the column\t'))
-        m = int(input('type the rows\t'))
-        a = Matrix(n,m)
-        a.make_matrix(n,m)
-        a.check_set()
-        print (a.print_colour(2))
+    # try:
+    n = int(input('type the column\t'))
+    m = int(input('type the rows\t'))
+    a = Matrix(n,m)
+    a.print_colour()
+    a.make_matrix(n,m)
+    a.check_set()
 
-    except (TypeError,ValueError):
-        print ('type a number.')
+        # print (a.print_colour())
+
+    # except (TypeError,ValueError):
+        # print ('type a number.')
