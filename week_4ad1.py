@@ -41,14 +41,21 @@ class Matrix:
     def check_set(self):
         lst = self.mat
         for row in range(len(lst)-1):
-            print (row)
             for i in range(len(lst[row])-1):
 
-                if lst[row].count(lst[row][i]) >= 2 and lst[row][i] == lst[row][i+1]:
-                    self.c.update({self.colour[lst[row][i]]})
+                if lst[row][i] == lst[row][i+1]:
+                    self.c.update({self.colour[lst[row][i]]}) 
+                    # self.c.update({self.colour[lst[row][i+1]]})
 
-                if lst[row][i] == lst[row+1][i] or lst[row][i] == lst[row][i+1]:
+                if lst[row][i] == lst[row+1][i]:
                     self.c.update({self.colour[lst[row][i]]})
+                    # self.c.update({self.colour[lst[row+1][i]]})
+
+                if row == len(lst) - 2:
+                    if lst[row+1][i] == lst[row+1][i+1]:
+                        self.c.update({self.colour[lst[row+1][i]]})
+                        # self.c.update({self.colour[lst[row+1][i+1]]})
+
 
         print (self.c)
 
