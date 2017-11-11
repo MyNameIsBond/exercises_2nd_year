@@ -36,8 +36,6 @@ class Matrix:
         self.mat = [[rnd.randint(1,9) for i in range(n)] for i in range(m)] # creates a matrix ! n x m
         print('\n'.join([''.join(['{:2}'.format(number) for number in row]) for row in self.mat]))
         return self.mat
-        if kolos is something:
-            print ('something')
 
 
     def check_set(self):
@@ -47,10 +45,10 @@ class Matrix:
 
             for i in range(len(lst[row])-1):
 
-                if lst[row][i] == lst[row][i+1]:
+                if lst[row][i] == lst[row][i+1]: # checking the next intance
                     self.c.update({self.colour[lst[row][i]]})
 
-                if lst[row][i] == lst[row+1][i]:
+                if lst[row][i] == lst[row+1][i]: # checking the row's  next intance
                     self.c.update({self.colour[lst[row][i]]})
 
                 if i == len(lst[row]) - 2: # checking the last's row instances
@@ -66,26 +64,22 @@ class Matrix:
                     if lst[row][i+1] == lst[row+1][i+1]:
                         self.c.update({self.colour[lst[row+1][i+1]]})
 
-
         print (self.c)
 
 
     def print_colour(self):
+
         self.c = Counter({})
         self.colour = ['red','yellow','green','pink','grey','orange','blue','violet','aqua','black','white']
 
 
 if __name__ == '__main__':
-
-    # try:
-    n = int(input('type the column\t'))
-    m = int(input('type the rows\t'))
-    a = Matrix(n,m)
-    a.print_colour()
-    a.make_matrix(n,m)
-    a.check_set()
-
-        # print (a.print_colour())
-
-    # except (TypeError,ValueError):
-        # print ('type a number.')
+    try:
+        n = int(input('type the column\t'))
+        m = int(input('type the rows\t'))
+        a = Matrix(n,m)
+        a.print_colour()
+        a.make_matrix(n,m)
+        a.check_set()
+    except (TypeError,ValueError):
+        print ('type a number.')
