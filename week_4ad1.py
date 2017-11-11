@@ -89,13 +89,3 @@ if __name__ == '__main__':
         a.print_colour()
     except (TypeError,ValueError):
         print ('type a number.')
-sdadkajsdasldkjasldkjasldk jasd laksdj
-sdasadasdasdasdasdadasd
-sadsa
-dasd
-sad
-asd
-asdas
-das
-dsa
-dsa
