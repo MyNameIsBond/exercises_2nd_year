@@ -44,6 +44,7 @@ class Matrix:
         '''s set will be checked'''
         lst = self.mat
         for row in range(len(lst)-1):
+
             for i in range(len(lst[row])-1):
 
                 if lst[row][i] == lst[row][i+1]:
@@ -52,13 +53,18 @@ class Matrix:
                 if lst[row][i] == lst[row+1][i]:
                     self.c.update({self.colour[lst[row][i]]})
 
+                if i == len(lst[row]) - 2: # checking the last's row instances
+                    if lst[row][i+1] == lst[row+1][i+1]:
+                        print ('hey')
+                        self.c.update({self.colour[lst[row][i+1]]})
+
                 if row == len(lst) - 2: # checking the corners of the matrix
 
                     if lst[row+1][i] == lst[row+1][i+1]:
                         self.c.update({self.colour[lst[row+1][i]]})
 
-                    if lst[row+1][i+1] == lst[row+1][i+1]:
-                        self.c.update({self.colour[lst[row+1][i]]})
+                    if lst[row][i+1] == lst[row+1][i+1]:
+                        self.c.update({self.colour[lst[row+1][i+1]]})
 
 
         print (self.c)
