@@ -54,8 +54,8 @@ class Matrix:
                     self.c.update({self.colour[lst[row][i]]})
 
                 if i == len(lst[row]) - 2: # checking the last's row instances
+
                     if lst[row][i+1] == lst[row+1][i+1]:
-                        print ('hey')
                         self.c.update({self.colour[lst[row][i+1]]})
 
                 if row == len(lst) - 2: # checking the corners of the matrix
