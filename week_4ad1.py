@@ -39,7 +39,7 @@ class Matrix:
 
 
     def check_set(self):
-        '''s set will be checked'''
+        '''set will be checked'''
         lst = self.mat
         for row in range(len(lst)-1):
 
@@ -64,7 +64,7 @@ class Matrix:
                     if lst[row][i+1] == lst[row+1][i+1]:
                         self.c.update({self.colour[lst[row+1][i+1]]})
 
-        print (self.c)
+        print (self.c.most_common(1))
 
 
     def print_colour(self):
