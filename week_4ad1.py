@@ -32,6 +32,9 @@ class Matrix:
         self.c = Counter({})
         self.colour = ['red','yellow','green','pink','grey','orange','blue','violet','aqua','black','white']
 
+kdsajdlsjdlk jasd
+dasd sadasdsad
+
     def make_matrix(self,n,m):
         ''' creates the matrix according to the inputs. '''
 
@@ -86,3 +89,13 @@ if __name__ == '__main__':
         a.print_colour()
     except (TypeError,ValueError):
         print ('type a number.')
+sdadkajsdasldkjasldkjasldk jasd laksdj
+sdasadasdasdasdasdadasd
+sadsa
+dasd
+sad
+asd
+asdas
+das
+dsa
+dsa
