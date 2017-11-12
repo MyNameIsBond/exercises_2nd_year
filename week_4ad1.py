@@ -38,6 +38,7 @@ class Matrix:
 
         self.mat = [[rnd.randint(1,9) for i in range(n)] for i in range(m)] # creates a matrix ! n x m
         print('\n'.join([' '.join(['{}'.format(number) for number in row]) for row in self.mat]))
+
         return self.mat
 
     def check_set(self):
