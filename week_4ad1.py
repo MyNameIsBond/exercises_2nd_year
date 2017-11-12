@@ -30,7 +30,7 @@ class Matrix:
 
         self.n = n
         self.m = m
-        self.c = Counter({})
+        self.cnt = Counter({})
         self.colour = ['red','yellow','green','pink','grey','orange','blue','black','white']
 
     def create_matrix(self,n,m):
@@ -49,28 +49,28 @@ class Matrix:
             for i in range(len(matrx[row])-1):
 
                 if matrx[row][i] == matrx[row][i+1]: # checking the next intance
-                    self.c.update({self.colour[matrx[row][i]-1]})#-1,to cover 0 instance in colour list. 
+                    self.cnt.update({self.colour[matrx[row][i]-1]}) #-1,for colour list.
 
                 if matrx[row][i] == matrx[row+1][i]: # checking the row's  next intance
-                    self.c.update({self.colour[matrx[row][i]-1]})
+                    self.cnt.update({self.colour[matrx[row][i]-1]})
 
                 if row == len(matrx) - 2: # checking the corners of the matrix
 
                     if matrx[row+1][i] == matrx[row+1][i+1]:
-                        self.c.update({self.colour[matrx[row+1][i]-1]})
+                        self.cnt.update({self.colour[matrx[row+1][i]-1]})
 
                 if i == len(matrx[row]) - 2:
 
                     if matrx[row][i+1] == matrx[row+1][i+1]:
-                        self.c.update({self.colour[matrx[row+1][i+1]-1]})
+                        self.cnt.update({self.colour[matrx[row+1][i+1]-1]})
 
 
-        return self.c
+        return self.cnt
 
 
     def print_colour(self):
 
-        for values,keys in self.c.most_common(1):
+        for values,keys in self.cnt.most_common(1):
             print ('the colour is {}. while the biggest set was {}.'.format(values,keys+1))
 
 
