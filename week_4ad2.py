@@ -21,7 +21,7 @@ class Smallest:
 
 
     def quicksort(self,lower,high):
-        '''the quicksort.'''
+        '''The Quicksort.'''
 
         if lower < high:
             p = self.partition (lower,high)
@@ -47,17 +47,13 @@ class Smallest:
     def check_number(self):
         '''print out the index of the given number. '''
 
-        if self.number in self.r_list:
-            if self.r_list.index(self.number)+1 == 1:
-                print ('{}st element'.format(self.r_list.index(self.number)+1))
-            elif self.r_list.index(self.number)+1 == 2:
-                print ('{}nd element'.format(self.r_list.index(self.number)+1))
-            elif self.r_list.index(self.number)+1 == 3:
-                print ('{}rd element'.format(self.r_list.index(self.number)+1))
-            elif self.r_list.index(self.number)+1 > 3:
-                print ('{}th element'.format(self.r_list.index(self.number)+1))
+        if (len(self.r_list)-1) > self.number:
+            small   = self.r_list[self.number-1]
+            el_list = self.number
+            print ('{}, is the {}th smallest element'.format(small,el_list))
+
         else:
-            print ('Not in my list.')
+            print ('The list is too small for the given number.')
 
     def __str__(self):
         '''prints out the list. '''
