@@ -50,7 +50,7 @@ class Smallest:
         if (len(self.r_list)-1) > self.number:
             small   = self.r_list[self.number-1]
             el_list = self.number
-            print ('{}, is the {}th smallest element'.format(small,el_list))
+            print ('{}, is the {}th smallest element | Given number {}'.format(small,el_list,self.number))
 
         else:
             print ('The list is too small for the given number.')
