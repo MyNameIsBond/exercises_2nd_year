@@ -431,6 +431,18 @@ What type of queries will need to be done?
 
 -- - Is this all a separate collection or do you want your whole database available for real time querying?
 
+-- The durability is when a nodes dies what steps do I have to make to save my data. 
+-- Well, one of the options is to split the data to multiple nodes (servers)
+
+
+-- Availability is how quick the data will be launched and be available to the user.
+-- One solution for this is to store data every time the transaction is completed
+
+--  Reduced Latency is how the quick the data will be travel to be launched. So the best thing is to split the data into many nodes and keep it close to the main node.
+
+-- Scalability can be achieved by simply adding more nodes so we can jump to the previous node and forth again.
+
+
 
 
 
