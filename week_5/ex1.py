@@ -16,9 +16,6 @@ class Node:
         ''' set the element'''
         self.next = newnext
 
-    def set_data(self,newdata):
-        self.data = newdata
-
 class Linked_list:
     ''' can create a linked list. '''
 
@@ -38,9 +35,9 @@ class Linked_list:
         current_node  = self.head
         previous_node = None
         found         = False
-        while not found :
+        while not found:
 
-            if current_node.get_data() == data:
+            if current_node.get_data() == data: 
                 found = True
 
             else:
@@ -48,10 +45,8 @@ class Linked_list:
                 current_node  = current_node.get_next()
                 print (previous_node,previous_node.get_data())
 
-        if self.head == None:
-            self.head = previous_node.set_next()
-            print ('hey')
-
+        if previous_node == None:
+            self.head = current_node.get_next()
         else:
             previous_node.set_next_node(current_node.get_next())
 
