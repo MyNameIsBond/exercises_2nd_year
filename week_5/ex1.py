@@ -6,7 +6,6 @@ class Node:
 
     def get_data(self):
         ''' get the data '''
-        
         return self.data
 
     def get_next(self):
@@ -15,13 +14,10 @@ class Node:
 
     def set_next_node(self,newnext):
         ''' set the element'''
-
         self.next = newnext
 
     def set_data(self,newdata):
-
         self.data = newdata
-
 
 class Linked_list:
     ''' can create a linked list. '''
@@ -36,56 +32,55 @@ class Linked_list:
         new_node.set_next_node(self.head)
         self.head = new_node
 
-    def empty(self):
-
-        return self.head == None
-        
-
     def delete(self,data):
         ''' Deletes an instance in the linked list '''
 
         current_node  = self.head
         previous_node = None
-        found = False
-        while not found:
+        found         = False
+        while not found :
+
             if current_node.get_data() == data:
                 found = True
+
             else:
-                current = current_node.get_next()
-        if current_node == None:
-            self.head = current.get_next()
+                previous_node = current_node
+                current_node  = current_node.get_next()
+                print (previous_node,previous_node.get_data())
+
+        if self.head == None:
+            self.head = previous_node.set_next()
+            print ('hey')
+
         else:
-            previous_node.set_next_node(current.get_next())
+            previous_node.set_next_node(current_node.get_next())
 
-    def len(self):
-        ''' return the length of the list. (int) '''
 
-        current_node = self.node
-        counter = 0
-        while current_node != None:
-            counter += 1
-        return result
 
-            
     def __str__(self):
         ''' prints out the list. '''
-        result =  ','
+        result =  ' '
         node = self.head
         if node != None:
-            result +=','+ str(node)
-            
             while node:
-                result +=','+ str(node)
-                node = node.get_next()
-
+                result += str(node.data) + ','
+                node = node.next
         return result
 
 
 
 if __name__ == '__main__':
     my_list = Linked_list()
+
+    my_list.append(2)
     my_list.append(4)
-    my_list.append(5)
+    my_list.append(8)
+    my_list.append(9)
+    my_list.append(2)
     my_list.append(6)
-    my_list.append(7)
+    my_list.append(8)
     print (my_list)
+    my_list.delete(2)
+    my_list.delete(8)
+    print (my_list)
+
