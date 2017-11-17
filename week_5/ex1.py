@@ -24,6 +24,7 @@ class Linked_list:
 
 
     def append(self,data):
+        ''' will add a number into the linked list '''
 
         new_node = Node(data)
         new_node.set_next_node(self.head)
