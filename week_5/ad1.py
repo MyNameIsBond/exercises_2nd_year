@@ -20,7 +20,6 @@ class Sum_check:
 		''' creating a list of diagonal inputs '''
 
 		matrix = range(len(self.mat))
-8
 		for i in matrix:
 			self.checking_list.append(self.mat[i][i])
 
@@ -32,7 +31,7 @@ class Sum_check:
 
 		if self.m <= len(sorted_list):
 			for i in range(self.m):
-				sum_up += sorted_list[i]
+				sum_up =sum_up + sorted_list[i]
 			print (','.join(str(sorted_list[s]) for s in range(self.m))+'\tsum:{}\n'.format(sum_up))
 
 		else:
@@ -52,5 +51,5 @@ if __name__ == '__main__':
 		a.check_matrix()
 		a.check_sum()
 		print (a)
-	except ValueError:
+	except ValueError,TypeError:
 		print ('a number Should be given')
