@@ -1,8 +1,8 @@
 from ex1 import *
 
 class Reading_files:
-	''' reads files and cretes lists 
-	according to the leangth of the word '''
+	'''reads files and cretes lists 
+	according to the leangth of the word'''
 
 	def __init__(self,file_name):
 
@@ -10,29 +10,29 @@ class Reading_files:
 
 
 	def read_words(self):
-		''' '''
+		'''reads the file and returns it splited.'''
 		with open(self.file,'r') as f:
-			for self.line in f:	
-				return self.line.split()
+			for self.line in f:
+				pass
 
 
 	def store_words(self):
-		''' '''
+		'''stores the linked list'''
 
 		srt = self.line.split()
 		srt.sort(key=len)
-		self.a = Linked_list()
-		for i in srt:
-			self.a.append(i)
-			print ('\t:{}'.format(i))
 
+		instances = [Linked_list() for i in range(len(srt))]
+		
+		for self.i in instances:
 			
-		return self.a
+			for word in srt:
+				print (self.i)
+				return self.i.append(word)
 			
-
 
 	def __str__(self):
-		''' '''
+		'''prints the list.'''
 		return str(self.a)
 
 
@@ -42,6 +42,6 @@ if __name__ == '__main__':
 		a = Reading_files('text_file.txt')
 		a.read_words()
 		a.store_words()
-		print (a)
+		# print (a)
 	except ValueError:
 		pass
