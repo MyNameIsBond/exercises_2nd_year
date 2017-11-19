@@ -44,7 +44,6 @@ class Linked_list:
             else:
                 previous_node = current_node
                 current_node  = current_node.get_next()
-                print (previous_node,previous_node.get_data())
 
         if previous_node == None:
             self.head = current_node.get_next()
@@ -67,7 +66,6 @@ class Linked_list:
 
 if __name__ == '__main__':
     my_list = Linked_list()
-
     my_list.append(2)
     my_list.append(4)
     my_list.append(8)
@@ -75,6 +73,7 @@ if __name__ == '__main__':
     my_list.append(2)
     my_list.append(6)
     my_list.append(8)
+    my_list.append('kolos')
     print (my_list)
     my_list.delete(2)
     my_list.delete(8)

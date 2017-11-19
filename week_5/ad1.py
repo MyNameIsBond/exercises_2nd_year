@@ -51,5 +51,5 @@ if __name__ == '__main__':
 		a.check_matrix()
 		a.check_sum()
 		print (a)
-	except ValueError,TypeError:
+	except (ValueError,TypeError):
 		print ('a number Should be given')
