@@ -19,21 +19,27 @@ class Reading_files:
 	def store_words(self):
 		'''stores the linked list'''
 
-		srt = self.line.split()
-		srt.sort(key=len)
+		sorted_list = self.line.split()
+		sorted_list.sort(key=len)
+		len_counter = 0
 
-		instances = [Linked_list() for i in range(len(srt))]
-		
+		instances = [Linked_list() for i in range(len(sorted_list))]
 		for self.i in instances:
-			
-			for word in srt:
-				print (self.i)
-				return self.i.append(word)
-			
+			print ('this is not!')
+			for word in sorted_list:
+				print ('this is it!')
+				if len_counter <= len(sorted_list):
+					if len_counter == len(word):
+						self.i.append(word)
+					else:
+						len_counter += 1
+				else:
+					return None
+			print (self.i)
 
 	def __str__(self):
 		'''prints the list.'''
-		return str(self.a)
+		return str(self.i)
 
 
 
@@ -42,6 +48,6 @@ if __name__ == '__main__':
 		a = Reading_files('text_file.txt')
 		a.read_words()
 		a.store_words()
-		# print (a)
+		print (a)
 	except ValueError:
 		pass
