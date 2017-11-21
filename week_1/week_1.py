@@ -1,24 +1,31 @@
 def combine_str(string_no1, string_no2):
     """ Combines two strings and returns one output"""
     str_list = []
+    
     for i in range(len(string_no1 + string_no2)):
+
         if i <= (len(string_no1)-1):
             str_list.append(string_no1[i])
+
         if i <= (len(string_no2)-1):
             str_list.append(string_no2[i])
+
     return print("".join(str_list)) # makes the list(str_list) a string 
 
-# combine_str("ok","not")
+combine_str("ok","not") # onkot
 
 def armstrong_num(number):
     """ True if a given number is armstrong """
     if number >= 2 and type(number)==int: # Try to make Try : except :
         ip,counter = 0,0
+
         for i in map(int,str(number)):
             counter = counter + 1            
             ip = ip + i**len(str(number))
+
             if number == ip:
                 return print("{}, Is an armstrong".format(number))
+
             elif len(str(number)) == counter:
                 print("{}, It is not armstrong".format(number))
 
@@ -68,7 +75,7 @@ Gold          4  kg      100
  
 Output:Load composition value = 790      4 kg of gold and 6 kg of copper 
 """
-# comment out you code! 
+
 def larry(carried_kg):
 	''' Takes KG and Print out according to storage how 
     much is being used and will be carried out from Larry  '''
