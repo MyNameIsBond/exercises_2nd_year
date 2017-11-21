@@ -1,4 +1,4 @@
-from ex1 import *
+from ex1 import Linked_list
 
 class Reading_files:
 	'''reads files and cretes lists 
@@ -20,27 +20,25 @@ class Reading_files:
 		'''stores the linked list'''
 
 		sorted_list = self.line.split()
-		sorted_list.sort(key=len)
+		sorted_list.sort()
 		len_counter = 0
-
 		instances = [Linked_list() for i in range(len(sorted_list))]
+		for i in sorted_list:
+			print (i)
 		for self.i in instances:
-			print ('this is not!')
+			len_counter += 1
 			for word in sorted_list:
-				print ('this is it!')
-				if len_counter <= len(sorted_list):
-					if len_counter == len(word):
-						self.i.append(word)
+				if len_counter == len(word):
+					if word == ',':
+						pass
 					else:
-						len_counter += 1
-				else:
-					return None
-			print (self.i)
+						self.i.append(word)	
+			if self.i.__str__() is not None:
+				print (self.i)
 
 	def __str__(self):
 		'''prints the list.'''
 		return str(self.i)
-
 
 
 if __name__ == '__main__':
@@ -50,4 +48,4 @@ if __name__ == '__main__':
 		a.store_words()
 		print (a)
 	except ValueError:
-		pass
+		print ('Maybe the name of the file is not correct.')

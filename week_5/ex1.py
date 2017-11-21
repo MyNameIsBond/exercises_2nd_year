@@ -13,25 +13,25 @@ class Node:
         return self.next
 
     def set_next_node(self,newnext):
-        ''' set the element'''
+        ''' set the next element'''
         self.next = newnext
 
 class Linked_list:
-    ''' can create a linked list. '''
+    '''creates a linked list.'''
 
     def __init__(self,head=None):
         self.head = head
 
 
     def append(self,data):
-        ''' will add a number into the linked list '''
+        '''will add a number into the linked list'''
 
         new_node = Node(data)
         new_node.set_next_node(self.head)
         self.head = new_node
 
     def delete(self,data):
-        ''' Deletes an instance in the linked list '''
+        '''Deletes an instance in the linked list'''
 
         current_node  = self.head
         previous_node = None
@@ -47,15 +47,16 @@ class Linked_list:
 
         if previous_node == None:
             self.head = current_node.get_next()
+
         else:
             previous_node.set_next_node(current_node.get_next())
-
 
 
     def __str__(self):
         ''' prints out the list. '''
         result =  ' '
         node = self.head
+
         if node != None:
             while node:
                 result += str(node.data) + ','
