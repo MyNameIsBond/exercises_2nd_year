@@ -74,7 +74,6 @@ if __name__ == '__main__':
     my_list.append(2)
     my_list.append(6)
     my_list.append(8)
-    my_list.append('kolos')
     print (my_list)
     my_list.delete(2)
     my_list.delete(8)
