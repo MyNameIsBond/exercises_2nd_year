@@ -1,5 +1,5 @@
 #--------->	this is week 3 on recursion. Enjoy!	<---------#
-# --------------------------------------------  ex1  -------------------------------------------- # 
+# --------------------------------------------  ex1  -------------------------------------------- #
 
 # ---------------------------- if you want to run it uncomment the inputs lines 25 - 26 - 27 -------------------------------#
 
@@ -9,8 +9,8 @@
 
 def prints_backwards(number,string):
 	''' Prints a string backwards seperated by spaces.'''
-	
-	if number <= -1: # this is the way out. 
+
+	if number <= -1: # this is the way out.
 		return None
 
 	else:
@@ -19,7 +19,7 @@ def prints_backwards(number,string):
 			if number < len(string):
 				number = len(string) - 1 # make sure the function will run.
 				print (number)
-		print ('\t:{}'.format(string[number][::-1])) # print the list according to the 'number' 
+		print ('\t:{}'.format(string[number][::-1])) # print the list according to the 'number'
 		return prints_backwards(number-1,string)
 
 # string = input ('Give a string to be mirrored\t')
@@ -36,18 +36,18 @@ Example output: Found (or Yes or True etc)
 Example input: L = [3,5,7,1,2,9] Target = 10
 Example output: Not found (or No or False etc)
 '''
-# -------------------------  ex2  ------------------------------- # 
+# -------------------------  ex2  ------------------------------- #
 def linear_recursive(l,counter,number):
 	if number == l[counter]:
-		print ('{}, has been Found'.format(number))
-	elif counter == -1: 
-		print ('Not Found')	
+		return True
+	elif counter == -1:
+		return False	
 	else:
 		linear_recursive(l,counter-1,number)
-	
+
 # try:
 # 	l =  [3,5,7,1,2,9]
-# 	counter = len(l) - 1 
+# 	counter = len(l) - 1
 # 	number = int(input('Give me the number you want to find.\t'))
 # 	linear_recursive(l,counter,number)
 # except TypeError:
@@ -57,7 +57,7 @@ def linear_recursive(l,counter,number):
 
 def linear_recursive_2nd(l,target,leng):
 	''' you create a list and find a given number in the list '''
-	if leng <= 5: # 5 is how many numbers the user is asked to type in. 
+	if leng <= 5: # 5 is how many numbers the user is asked to type in.
 		try:
 			given_number = int(input('Give me 5 numbers for my list '))
 			print('countdown,{}'.format(leng))
@@ -69,7 +69,7 @@ def linear_recursive_2nd(l,target,leng):
 		if target in l:
 			print ('\t:{} Has been found'.format(target))
 		else:
-			print ('\t:{} Has not been found'.format(target))			
+			print ('\t:{} Has not been found'.format(target))
 
 
 
@@ -77,10 +77,10 @@ def linear_recursive_2nd(l,target,leng):
 # 	target = int(input('For what number are you looking for?\t'))
 # 	l = []
 # 	linear_recursive_2nd(l,target,0)
-# except (NameError,ValueError): # make sure the input is a number (int) 
+# except (NameError,ValueError): # make sure the input is a number (int)
 # 	print ('a number please.')
 
-		
+
 
 #------------------------ Advanced ----------------------------#
 '''
@@ -102,12 +102,12 @@ import sys
 def tower_of_cubes():
 	''' Creates a tower of cubes '''
 
-	cubes 			= {} # dict to store [name : [ colour : cube's length] ] 
+	cubes 			= {} # dict to store [name : [ colour : cube's length] ]
 	colours 		= ['red','pink','white','green','silver','black','orange']
 	sum_length 		= 0
-	colour_check	= None # a variable to check the colour looping thought the sorted list. 
-	counter 		= 0 
-	try:	
+	colour_check	= None # a variable to check the colour looping thought the sorted list.
+	counter 		= 0
+	try:
 		n = int(input('how big your tower should be?\t'))
 	except ValueError:
 		print ('should be a number')
@@ -130,13 +130,13 @@ def tower_of_cubes():
 		elif colour_check == cubes[i]['colour']:
 			try:
 				if final_list[counter+1] == True:
-					final_list[counter] , final_list[counter+1] = final_list[counter+1], final_list[counter] # swapping. 
+					final_list[counter] , final_list[counter+1] = final_list[counter+1], final_list[counter] # swapping.
 				else:
-					final_list[counter-1] , final_list[counter-2] = final_list[counter-2], final_list[counter-1] # swapping. 
+					final_list[counter-1] , final_list[counter-2] = final_list[counter-2], final_list[counter-1] # swapping.
 			except Traceback:
 				print ('oops!')
 
-		counter +=1 
+		counter +=1
 	for i in reversed(final_list):
 		print (i)
 

@@ -1,8 +1,5 @@
 
-l1 = [3,1,9]
-l2 = [2,1,2,1]
-
-def polynomial(l1,l2):
+def ppolynomial(l1,l2):
 	'''Adds two polynomials which are in a list form. '''
 	solve = []
 	l1 = list(reversed(l1)) 
@@ -18,9 +15,8 @@ def polynomial(l1,l2):
 		solve[k] = solve[k] + l1[k] # adds the two numbers on the same list (solve)
 		
 	solve = list(reversed(solve))
-	print (solve)
+	return solve
 
-# polynomial(l1,l2)
 '''
 b) Given the following pseudocode, first understand how it works, 
 then implement the code for multiplying
@@ -51,7 +47,7 @@ def mult_poly(l2,l1):
 	# m = [i for i in l1]
 	res = np.array([[i*k for i in l1],[k*2 for k in l2]])
 	print (res)
-mult_poly(l1,l2)
+# mult_poly(l1,l2)
 
 
 
@@ -90,8 +86,8 @@ class Polynomial():
 
 
 
+if __name__ == '__name__':
 
-
-a = Polynomial(l1,l2)
-# print (a.__add__(l1 , l2))
+	a = Polynomial(l1,l2)
+	print (a.__add__(l1 , l2))
 
