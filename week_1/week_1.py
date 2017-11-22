@@ -56,7 +56,7 @@ def factorial(m,n):
             print('{0:1d} Devides {1:2d}'.format(m, n))
     else:
         return print ("Nothing!")
-factorial(2,4)
+# factorial(2,4)
 
 """
 A lorry can carry at most {n} kilograms. The name of the materials, 
@@ -105,4 +105,17 @@ def larry(carried_kg):
     print('Kg Left:{}\tPrice:{}\n\n'.format(carried_kg,price))
 
     return (carried_kg,price)
+
+for i in range(10):
+    larry(i)
+
+
+
+
+
+
+
+
+
+
 
