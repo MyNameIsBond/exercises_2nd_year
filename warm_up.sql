@@ -448,5 +448,53 @@ What type of queries will need to be done?
 -- Or when the data the node should be locked. And the room is booked by the guy who booked it first.
 
 
+------------------------------- Week 6 -------------------------------
+
+
+
+
+/*
+Question 1)
+
+Data mining is so vital in data science, because we can create
+patters with data and therefore impementing facts. This means that we can store
+data. Most of the time is if / then patterns which can be emplained 
+. In onther words is used for data analysing.
+
+Question 2)
+Medical.				Examples.
+1)Cancer              	1) 
+2)dentist               2)
+3)surgery               3)
+4)researches            4)
+5)                   	5)
+6)                   	6)
+
+in Cancer Preventing because we can use to give as details
+and prevent Cancer by analysing how it would have prevent
+in the 1st place and learning from they mistake.
+
+
+
+In Surgery can be used as to give instructions on how the surger
+needs to operate, in order not to cause damage to the patient.
+
+
+
+
+
+
+Question 3)
+
+ a simple example upon this is. When you wake up, if you have
+ to go to work... then you dress up then you leave the house then
+ to get into the car... etc...
+ but in case you don't what you do? wake up,have a breakfast
+ etc..
+
+ In one way this can be analysed how what You do on Mondays?
+ it could be something like this. 86% work. while the rest (14%)
+ you have a day off.
+
 
 
