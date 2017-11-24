@@ -19,6 +19,11 @@ Hint: Use a nester FOR loop to traverse both arrays.
 • Return res
 
 '''
+
+
+
+
+
 class Polynomial:
 	'''can add and multiply Polynomails.'''
 	
@@ -47,6 +52,7 @@ class Polynomial:
 		return list(reversed(self.res))
 
 	def __mul__(self):
+		'''multiplys two polynomails.'''
 		self.res = [0 for i in range(len(self.l1)+len(self.l2)-1)]
 		for i in range(len(self.l1)):
 			for j in range(len(self.l2)):
