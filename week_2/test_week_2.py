@@ -16,10 +16,9 @@ class test_Polynomial(unittest.TestCase):
 		self.assertEqual(solution_mul,instance.__mul__())
 
 	def test_eight_queens(self):
-		pass	
-
-	
+		pass
 
 if __name__ == '__main__':
 	unittest.main()
+
 

@@ -1,5 +1,6 @@
 '''
 1) In Danger!
+
 Row1 = Row2
 
 Column1 = Column2
@@ -18,50 +19,63 @@ if ubstraction of row and columns is 0
 else return True.
 
 '''
-import numpy as np
 
 
 class Eight_Queens:
 	'''Place Eight chess-queens without killing earch other.'''
 
 	def __init__(self,length):
-		# self.board = [[0 for i in range(length)] for i in range(length)]
-		# length = (length,length)
+		# Matrix  length X length 
+		self.length  =  length
+		self.board = [[(k,i) for i in range(self.length)] for k in range(self.length)]
+		self.solutions = []
 
-		
-		self.board = [[1,2 ,3 ,4 ,5 ,6 ,7 ,8 ],
-					 [ 9,10,11,12,13,14,15,16],
-				 	 [17,18,19,20,21,22,22,23],
-				 	 [21,22,23,24,25,26,25,24],
-				 	 [31,32,33,34,35,36,37,38],
-				 	 [41,42,43,44,45,46,47,48],
-				 	 [51,52,53,54,55,56,57,58],
-				 	 [61,62,63,64,65,66,67,68]]
+	def solve(self):
+		''' keeps calling queen_in_danger() since all queens is safe.'''
+		row = -1
+		for i in range(self.length):
+			if self.queen_in_danger(row):
 
-		# self.board = np.zeros(length,dtype=np.int)
+				self.solutions.append(self.board[row][i])
+				self.board[row][i] = True 
+				if i == self.length:
+					return self.print_sol()
 
+				else:
+					self.queen_in_danger(row + 1)
+			row +=1
 
+	def queen_in_danger(self,row):
+		''' True if the queen is safe '''
+		board = self.board	
 
+		for k in range(self.length):# Row
 
-	def safe_place(self):
-		'''True is the queen is safe.'''
-		board = self.board
-		counter = range(len(board))
-		for row in counter:			
-			print(board[row][row])
+			if board[row][k] == True:
+				return False
 
-		for row in counter:
-			print ('{}'.format(board[row][]))
+		for row in range(self.length):#Diagonal
 
+			if board[row][row] == True:
+				return False
 
-	def print_board(self):
-		''''''
-		pass
+		for k in range(self.length):#column
 
+			if board[k][row] == True:
+				return False
+
+		return True
+
+	def print_sol(self):
+		for i in self.solutions:
+			print ('this is a place.{}'.format(i))
 	def __str__(self):
-		return str(self.board)
+
+		return ('\n'.join([' '.join(['{}'.format(number) for number in row]) for row in self.board]))
 
 
 if __name__ == '__main__':
 	a = Eight_Queens(8)
-	a.safe_place()
+	a.solve()
+	a.print_sol()
+	print (a)
