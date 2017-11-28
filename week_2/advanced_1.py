@@ -51,26 +51,35 @@ class Eight_Queens:
 
 		board = self.board	
 
-		for k in range(self.length):# Row 
+		for k in range(self.length):# Column_check 
 
 			if  board[row][k]  == True:
 				return False
 
-		for s in range(self.length): # Column
+		for s in range(self.length): # Row_check
 
 			 if board[s][column]== True:
 			 	return False
 
-		for m in range(row,self.length-1,1): #diagonal 
+		# for m in range(row,self.length-1,1): #diagonal 
 
-			print (row+m,column+m)
-			if board[row+m][column+m] == True:
+		# 	print (row+m,column+m)
+		# 	if board[row-m][column+m] == True:
+		# 		return False
+
+		for dia in range(row,0,-1): #diagonal backwards
+
+			if board[row-dia][column-dia] == True:
 				return False
 
-		for d in range(row,0,-1): #diagonal backwards
 
-			if board[row-d][column-d] == True:
+		for dia_min in range(row,0):
+			print (dia_min)
+			if board[row-dia_min][column+dia_min]:
 				return False
+			if board[row-dia_min][column+dia_min]:
+				pass
+
 
 		return True
 
@@ -81,10 +90,11 @@ class Eight_Queens:
 		return ('\n\n'.join(['\t'.join(['{}'.format(number) for number in row]) for row in self.board]))
 
 
+
 if __name__ == '__main__':
-	a = Eight_Queens(8)
-	a.solve()
-	print (a)
-
-
-
+	try:
+		a = Eight_Queens(8)
+		a.solve()
+		print (a)
+	except TypeError:
+		print ('The input should be a number.')
