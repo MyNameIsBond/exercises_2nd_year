@@ -44,38 +44,39 @@ class Eight_Queens:
 						return None
 
 					else:
-						self.queen_in_danger(row,column)
+						self.queen_in_danger(row-1,column-1)
 
 	def queen_in_danger(self,row,column):
 		''' True if the queen is safe  to be placed'''
 
 		board = self.board	
 
-		for k in range(self.length):# Row | Column
+		for k in range(self.length):# Row 
 
 			if  board[row][k]  == True:
 				return False
 
-		for s in range(self.length):
+		for s in range(self.length): # Column
 
 			 if board[s][column]== True:
 			 	return False
 
-		for m in range(row,self.length): #diagonal 
+		for m in range(row,self.length-1,1): #diagonal 
 
-			if board[m][m] == True:
+			print (row+m,column+m)
+			if board[row+m][column+m] == True:
 				return False
 
-		for d in range(row,self.length,-1):
-			
-			if board[d][d] == True:
+		for d in range(row,0,-1): #diagonal backwards
+
+			if board[row-d][column-d] == True:
 				return False
 
 		return True
 
 
 	def __str__(self):
-		''' print the Boad if is called  print method'''
+		''' print the Boad if print method is called'''
 
 		return ('\n\n'.join(['\t'.join(['{}'.format(number) for number in row]) for row in self.board]))
 
