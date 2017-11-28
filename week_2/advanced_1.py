@@ -32,50 +32,58 @@ class Eight_Queens:
 
 	def solve(self):
 		''' keeps calling queen_in_danger() since all queens is safe.'''
-		row = -1
-		for i in range(self.length):
-			if self.queen_in_danger(row):
+		column = 0
+		for row in range(0,self.length):
+			for column in range(0,self.length):
 
-				self.solutions.append(self.board[row][i])
-				self.board[row][i] = True 
-				if i == self.length:
-					return self.print_sol()
+				if self.queen_in_danger(row,column):
 
-				else:
-					self.queen_in_danger(row + 1)
-			row +=1
+					self.board[row][column] = True
 
-	def queen_in_danger(self,row):
-		''' True if the queen is safe '''
+					if row == self.length:
+						return None
+
+					else:
+						self.queen_in_danger(row,column)
+
+	def queen_in_danger(self,row,column):
+		''' True if the queen is safe  to be placed'''
+
 		board = self.board	
 
-		for k in range(self.length):# Row
+		for k in range(self.length):# Row | Column
 
-			if board[row][k] == True:
+			if  board[row][k]  == True:
 				return False
 
-		for row in range(self.length):#Diagonal
+		for s in range(self.length):
 
-			if board[row][row] == True:
+			 if board[s][column]== True:
+			 	return False
+
+		for m in range(row,self.length): #diagonal 
+
+			if board[m][m] == True:
 				return False
 
-		for k in range(self.length):#column
-
-			if board[k][row] == True:
+		for d in range(row,self.length,-1):
+			
+			if board[d][d] == True:
 				return False
 
 		return True
 
-	def print_sol(self):
-		for i in self.solutions:
-			print ('this is a place.{}'.format(i))
-	def __str__(self):
 
-		return ('\n'.join([' '.join(['{}'.format(number) for number in row]) for row in self.board]))
+	def __str__(self):
+		''' print the Boad if is called  print method'''
+
+		return ('\n\n'.join(['\t'.join(['{}'.format(number) for number in row]) for row in self.board]))
 
 
 if __name__ == '__main__':
 	a = Eight_Queens(8)
 	a.solve()
-	a.print_sol()
 	print (a)
+
+
+
