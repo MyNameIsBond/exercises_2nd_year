@@ -13,11 +13,9 @@ if rows are the same
 
 if columns are the same 
 
-if ubstraction of row and columns is 0 
-
+if ubstraction of row and columns is same
 
 else return True.
-
 '''
 
 
@@ -27,27 +25,26 @@ class Eight_Queens:
 	def __init__(self,length):
 		# Matrix  length X length 
 		self.length  =  length
-		self.board = [[(k,i) for i in range(self.length)] for k in range(self.length)]
+		self.board 	 = [[(k,i) for i in range(self.length)] for k in range(self.length)]
 		self.solutions = []
 
 	def solve(self):
 		''' keeps calling queen_in_danger() since all queens is safe.'''
-		column = 0
-		for row in range(0,self.length):
-			for column in range(0,self.length):
+		for row in range(self.length):
+
+			for column in range(self.length):
 
 				if self.queen_in_danger(row,column):
 
 					self.board[row][column] = True
-
-					if row == self.length:
-						return None
-
-					else:
-						self.queen_in_danger(row-1,column-1)
+					self.solutions.append((row,column))
+					if len(self.solutions) == self.length:
+						print ('hey')
+				else:
+					self.queen_in_danger(row-1,column)
 
 	def queen_in_danger(self,row,column):
-		''' True if the queen is safe  to be placed'''
+		''' True if is the right place. '''
 
 		board = self.board	
 
@@ -56,33 +53,34 @@ class Eight_Queens:
 			if  board[row][k]  == True:
 				return False
 
-		for s in range(self.length): # Row_check
-
-			 if board[s][column]== True:
-			 	return False
-
-		# for m in range(row,self.length-1,1): #diagonal 
-
-		# 	print (row+m,column+m)
-		# 	if board[row-m][column+m] == True:
-		# 		return False
-
-		for dia in range(row,0,-1): #diagonal backwards
-
-			if board[row-dia][column-dia] == True:
+			if board[k][column]== True: # Row 
 				return False
 
-
-		for dia_min in range(row,0):
-			print (dia_min)
-			if board[row-dia_min][column+dia_min]:
+			if self.diagonal_queen(row,column): # Diagonal.
 				return False
-			if board[row-dia_min][column+dia_min]:
-				pass
-
 
 		return True
 
+	def diagonal_queen(self,row1,column1):
+		''' true if the Queen is not safe '''
+		for c_row in range(self.length):
+
+			for c_column in range(self.length):
+
+				current = self.board[c_row][c_column]
+
+				if type(current) == bool:
+					cur_row = abs(row1 - c_row)
+					cur_col = abs(column1 - c_column)
+
+					if cur_col == cur_row:
+
+						return True
+
+
+	def solution(self):
+		'''return the queen's position so it can be tested.'''
+		return self.solutions
 
 	def __str__(self):
 		''' print the Boad if print method is called'''
