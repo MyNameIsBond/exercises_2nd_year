@@ -39,7 +39,6 @@ class Eight_Queens:
 					self.board[row][column] = True
 					self.solutions.append((row,column))
 					if len(self.solutions) == self.length:
-						print ('hey')
 				else:
 					self.queen_in_danger(row-1,column)
 

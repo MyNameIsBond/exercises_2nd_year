@@ -1,4 +1,3 @@
-#--------------------------------------------week 4--------------------------------------------#
 '''
  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ex 1   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 Manually arrange the sequence [2 7 9 4 1 5 3 6 0 8] in ascending order using insertion sort, bubble sort
@@ -30,6 +29,7 @@ to run selection sort. selection_sort() in class All_sorts should be run.
 this could be explained: Best case:O(n) which means O(1) one swap. worst case: O(n^2) or ( O(n**2) )
 this algorithm is the slowest in this list. because compares only two numbers at a time.
 '''
+
 import random
 class All_sorts:
     ''' every function is another sort type (algorithm). '''
@@ -112,6 +112,7 @@ if __name__ == '__main__':
         l = [2,7,9,4,1,5,3,6,8,0]
         # l = [random.randint(1,30) for x in range(40)] #uncomment if you want to test with different numbers.
         a = All_sorts(l)
+        
         # a.bubble_sort(l)
         # a.insertion(l)
         a.selection_sort(l)
