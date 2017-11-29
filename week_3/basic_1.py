@@ -16,8 +16,8 @@ def prints_backwards(number,string):
 # string = input ('Give a string to be mirrored\t')
 # prints_backwards(1,string)
 
+
 if __name__ == '__main__':
-    
     prints_backwards(1,string)
 
 
