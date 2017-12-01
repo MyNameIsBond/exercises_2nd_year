@@ -20,7 +20,6 @@ class test_Polynomial(unittest.TestCase):
 		solution_list = [(0, 0), (1, 2), (2, 4), (3, 1),(4,3)]
 		instance = Eight_Queens(8)
 		instance.solve()
-
 		self.assertEqual(solution_list,instance.solution())
 
 

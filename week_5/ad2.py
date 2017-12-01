@@ -29,7 +29,7 @@ class Reading_files:
 			len_counter += 1
 			for word in sorted_list:
 				if len_counter == len(word):
-					if word == ',':
+					if word == '<->':
 						pass
 					else:
 						self.i.append(word)	

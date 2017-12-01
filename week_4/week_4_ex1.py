@@ -1,10 +1,9 @@
 '''
- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ex 1   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>ex1<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 Manually arrange the sequence [2 7 9 4 1 5 3 6 0 8] in ascending order using insertion sort, bubble sort
 and selection sort, showing at each step the new configuration of the sequence. How many
 comparisons and how many element moves were used by each method? Which is the best performing
 method for sorting this array of integers? Which would be the worst arrangement of this sequence?
-
 
 
 1) Insertion Sort:
@@ -106,7 +105,7 @@ class All_sorts:
 
 
 # To Check every sorting,uncomment instances one at a time.
-# Note: Make sure you have only one uncommented sorting alg due to the list will be sorted from another alg.
+# Note: Make sure you have only one uncommented sorting alg due to the list will be already sorted from another alg.
 if __name__ == '__main__':
     try: # to make sure is going to be a list.
         l = [2,7,9,4,1,5,3,6,8,0]
@@ -114,8 +113,8 @@ if __name__ == '__main__':
         a = All_sorts(l)
         
         # a.bubble_sort(l)
-        # a.insertion(l)
-        a.selection_sort(l)
+        a.insertion(l)
+        # a.selection_sort(l)
         # print (a)
     except TypeError:
         print('a list should be given should be given.')

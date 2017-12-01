@@ -13,7 +13,6 @@ Example output: 16 (maximum tower height – corresponding to cube2, cube3 and c
 
 from collections import OrderedDict
 
-import sys
 def tower_of_cubes():
 	''' Creates a tower of cubes '''
 
@@ -22,6 +21,7 @@ def tower_of_cubes():
 	sum_length 		= 0
 	colour_check	= None # a variable to check the colour looping thought the sorted list.
 	counter 		= 0
+
 	try:
 		n = int(input('how big your tower should be?\t'))
 	except ValueError:
@@ -32,10 +32,11 @@ def tower_of_cubes():
 		cube_length = int(input('Type a the length of the {} cube\t:'.format(colours[colour - 1])))
 		cubes.update({'cube'+ str((i+1)):{'length':cube_length,'colour':colours[colour - 1]}})
 		sum_length += cube_length
+		
 	final_list = sorted(cubes, key=lambda x: cubes[x]['length'])
-	print (final_list)
 
 	for i in final_list:
+
 		if colour_check == None:
 			colour_check = cubes[i]['colour']
 
@@ -43,17 +44,15 @@ def tower_of_cubes():
 			colour_check = cubes[i]['colour']
 
 		elif colour_check == cubes[i]['colour']:
-			try:
-				if final_list[counter+1] == True:
-					final_list[counter] , final_list[counter+1] = final_list[counter+1], final_list[counter] # swapping.
-				else:
-					final_list[counter-1] , final_list[counter-2] = final_list[counter-2], final_list[counter-1] # swapping.
-			except Traceback:
-				print ('oops!')
+
+			if final_list[counter+1] == True:
+				final_list[counter] , final_list[counter+1] = final_list[counter+1], final_list[counter] # swapping.
+			else:
+				final_list[counter-1] , final_list[counter-2] = final_list[counter-2], final_list[counter-1] # swapping.
 
 		counter +=1
-	for i in reversed(final_list):
-		print (i)
+		
+	print ( str(sum_length) +'  ' +'  '.join(reversed(final_list)))
 
 
 

@@ -21,7 +21,7 @@ class Smallest:
 
 
     def quicksort(self,lower,high):
-        '''The Quicksort.'''
+        '''the Quicksort.'''
 
         if lower < high:
             p = self.partition (lower,high)
@@ -68,3 +68,5 @@ if __name__ == '__main__':
 
     except (TypeError,ValueError):
         print ('the Input should be a number.')
+
+

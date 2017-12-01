@@ -1,4 +1,5 @@
 import random as rnd
+
 class Sum_check:
 
 	def __init__(self,n,m):

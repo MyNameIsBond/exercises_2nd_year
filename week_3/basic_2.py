@@ -17,9 +17,7 @@ def linear_recursive(l,counter,number):
 
 if __name__ == '__main__':
     try:
-        l =  [3,5,7,1,2,9]
         counter = len(l) - 1
-        number = int(input('Give me the number you want to find.\t'))
         linear_recursive(l,counter,number)
     except TypeError:
         print('Give me a number please.')

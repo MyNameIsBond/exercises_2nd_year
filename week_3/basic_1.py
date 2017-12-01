@@ -9,7 +9,7 @@ def prints_backwards(number,string):
 			string = string.split(' ')
 			if number < len(string):
 				number = len(string) - 1 # make sure the function will run.
-				print (number)
+
 		print ('\t:{}'.format(string[number][::-1])) # print the list according to the 'number'
 		return prints_backwards(number-1,string)
 
@@ -18,7 +18,8 @@ def prints_backwards(number,string):
 
 
 if __name__ == '__main__':
-    prints_backwards(1,string)
+	string = 'shit is this'
+	prints_backwards(1,string)
 
 
 

@@ -1,7 +1,7 @@
 def armstrong_num(number):
     """ True if a given number is armstrong """
 
-    if number >= 2 and type(number)==int: # Try to make Try : except :
+    if number >= 2 and type(number)==int:
         ip,counter = 0,0
 
         for i in map(int,str(number)):
@@ -16,3 +16,5 @@ def armstrong_num(number):
                 print("{}, It is not armstrong".format(number))
                 return False
 
+
+                

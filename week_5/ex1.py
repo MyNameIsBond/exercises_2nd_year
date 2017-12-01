@@ -59,7 +59,7 @@ class Linked_list:
 
         if node != None:
             while node:
-                result += str(node.data) + ','
+                result += str(node.data) + '<->'
                 node = node.next
         return result
 
