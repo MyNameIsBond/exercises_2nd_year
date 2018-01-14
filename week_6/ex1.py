@@ -1,7 +1,9 @@
-'''1. Implement in the language of your choice a function that deletes a node in a binary search tree.
+'''
+1. Implement in the language of your choice a function that deletes a node in a binary search tree.
 Integrate this function in the code provided to you on Moodle. 
 The deletion operation should be
-performed based on the key (value) of the node.'''
+performed based on the key (value) of the node.
+'''
 
 
 class BinTreeNode(object):
@@ -12,15 +14,19 @@ class BinTreeNode(object):
         self.right	=None
         
 
+
 def tree_insert( tree, item):
+
     if tree==None:
         tree=BinTreeNode(item)
+
     else:
     	
         if item < tree.value:
 
             if tree.left==None:
                 tree.left=BinTreeNode(item)
+
             else:
                 tree_insert(tree.left,item)
         else:
@@ -33,6 +39,7 @@ def tree_insert( tree, item):
     return tree
  
 def postorder(tree):
+
     if tree.left!=None:
         postorder(tree.left)
     if tree.right!=None:
@@ -47,36 +54,44 @@ def in_order(tree):
     if tree.right!=None:
         in_order(tree.right)
 
-
 class Delete_Node(object):
   '''deletes a node from the tree'''
+
   def __init__ (self,tree,value):
+
     self.tree = tree
     self.value = value
 
+
   def find_node(self,target):
+
     k = self.tree
     while k != None:
 
       if k.value == target:
+        print ("this is the value {}".format(k.value))
         return k.value
 
       elif k.value > target:
         k = k.left
+        print ("this is the left {}".format(k.value))
+        return k.value
 
       else:
         k = k.right
+        print ("this is the right {}".format(k.value))
+        return k.value
+
+
     return False
 
-  def 
 
-    
+
 
 
   def no_child(self):
     if (self.tree.left and self.tree.left) == None:
       return None
-    if
   def one_child(self):
     pass
 
@@ -94,6 +109,7 @@ if __name__ == '__main__':
   tree_insert(t, 4)
   tree_insert(t,11)
 
-  s = Delete_Node(t,value)
+  s = Delete_Node(t,3)
+
 
   in_order(t)
