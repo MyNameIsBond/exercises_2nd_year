@@ -34,9 +34,7 @@ def factorial(n,m):
 	else:
 		print ('{}! Not Devided {}'.format(n_1,m))
 		return False
-
-
-
+		
 
 
 

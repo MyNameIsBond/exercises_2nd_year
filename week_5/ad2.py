@@ -41,6 +41,7 @@ class Reading_files:
 		return str(self.i)
 
 
+
 if __name__ == '__main__':
 	try:
 		a = Reading_files('text_file.txt')
@@ -49,3 +50,6 @@ if __name__ == '__main__':
 		print (a)
 	except ValueError:
 		print ('Maybe the name of the file is not correct.')
+
+
+

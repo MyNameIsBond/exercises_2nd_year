@@ -1,6 +1,6 @@
 import re
-from sympy.solvers import solve
-from sympy import Symbol
+from   sympy.solvers  import solve
+from   sympy          import Symbol
 import sys
 import numpy as np
 

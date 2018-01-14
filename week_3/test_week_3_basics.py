@@ -16,8 +16,6 @@ class Test_Week_3(unittest.TestCase):
     def test_linear_recursive(self):
         pass
 
-    
-
 if __name__ == '__main__':
 	unittest.main()
 

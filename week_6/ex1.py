@@ -26,7 +26,7 @@ def tree_insert( tree, item):
 
             if tree.left==None:
                 tree.left=BinTreeNode(item)
-
+                
             else:
                 tree_insert(tree.left,item)
         else:
@@ -79,7 +79,7 @@ class Delete_Node(object):
 
       else:
         k = k.right
-        print ("this is the right {}".format(k.value))
+        print ("this is the right {} ".format(k.value))
         return k.value
 
 
@@ -92,6 +92,7 @@ class Delete_Node(object):
   def no_child(self):
     if (self.tree.left and self.tree.left) == None:
       return None
+
   def one_child(self):
     pass
 

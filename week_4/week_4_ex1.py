@@ -113,7 +113,7 @@ if __name__ == '__main__':
         a = All_sorts(l)
         
         # a.bubble_sort(l)
-        a.insertion(l)
+        # a.insertion(l)
         # a.selection_sort(l)
         # print (a)
     except TypeError:

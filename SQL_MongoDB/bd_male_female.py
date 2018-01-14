@@ -2,7 +2,7 @@ import numpy
 
 
 class Male_female_school(object):
-	"""returns"""
+	''' '''
 	def __init__(self, male,female):
 		self.male = male
 		self.female = female
@@ -13,7 +13,9 @@ class Male_female_school(object):
 	def graduates(Self):
 		pass
 
+
 class Male_female_court(object):
+	''' '''
 
 	def __init__(self,male,female):
 
@@ -37,7 +39,7 @@ class Male_female_court(object):
 		pass
 
 class Male_female_suicide(object):
-
+	''' '''
 
 	def __init_(self,male,female):
 		self.male = male
@@ -55,11 +57,11 @@ class Male_female_suicide(object):
 
 
 class Male_female_employability(object):
-
+	''' '''
 	def __init__(self,male,female):
 		self.male = male
 		self.female = female
 
 	def wage(self):
 		pass
-		
+
